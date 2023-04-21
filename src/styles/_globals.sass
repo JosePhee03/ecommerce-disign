@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap')
+@import '_general'
+
+html
+  font-size: 10px
+  font-family: 'Inter', sans-serif
+  font-weight: 400
+  font-style: normal
+
+html[data-theme="dark"]
+  body
+    background: $dark-navy-400
+
+  .icon
+    stroke: $light-navy-100
+
+  .font-primary
+    color: $light-navy-100
+
+  .bg-primary
+    background: $dark-navy-300
+
+body
+  background: $light-navy-100
+  color: $dark-navy-500
+
+.font-primary
+  color: $dark-navy-500
+
+.icon
+  stroke: $dark-navy-500
+  width: $icon-size-xl
+  height: $icon-size-xl
+
+.bg-primary
+  background: $white
+
+.button-icon
+  display: flex
+  justify-content: center
+  align-items: center
+  border: none
+  padding: $spacing-sm
+  border-radius: 100%
+  background: none
+
+  &:hover, &:focus
+    cursor: pointer
+    background: $navy-500-trasparent

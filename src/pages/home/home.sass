@@ -1,0 +1,61 @@
+@use './components/products_cont'
+@import '../../styles/_general'
+
+.home-layout
+  display: grid
+  grid-template-columns: 1fr
+  grid-template-rows: repeat(4, auto)
+  margin: $spacing-xl
+  grid-row-gap: $spacing-xl
+
+.header
+  display: flex
+  justify-content: space-between
+  padding: $spacing-xl 0
+
+  &__logo
+    display: flex
+    align-items: center
+    gap: $spacing-md
+
+  &__icons
+    display: flex
+    gap: $spacing-xl
+
+.search-cont
+  display: flex
+  flex-direction: column
+  justify-content: center
+  position: relative
+
+  &__icon
+    position: absolute
+    left: $spacing-xl
+    width: $icon-size-md
+
+  &__input
+    padding: $spacing-xl
+    padding-left: ($spacing-xl * 2) + $icon-size-md
+    border: $border-light-navy-200
+    box-shadow: $drop-shadow
+    border-radius: $rounded-md
+
+.filter-cont
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+.filter-button
+  display: flex
+  background: none
+  align-items: center
+  padding: $spacing-sm $spacing-md
+  gap: $spacing-md
+
+  border: $border-navy-500
+  color: $navy-500
+  border-radius: $rounded-sm
+
+  &__icon
+    stroke: $navy-500
+    width: $icon-size-sm
