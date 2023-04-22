@@ -1,9 +1,14 @@
 import { Home } from '@/pages'
+import { StoreProvider } from '@/store'
+import FooterDev from '@/components/FooterDev'
 
 function App() {
 
   return (
-    <Home />
+    <StoreProvider>
+      <Home />
+      <FooterDev />
+    </StoreProvider>
   )
 }
 
