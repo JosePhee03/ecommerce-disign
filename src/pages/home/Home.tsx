@@ -1,6 +1,7 @@
 import { FilterIcon, LogoIcon, MoonIcon, SearchIcon, ShoppingCardIcon } from '@/components/icons'
 import ProductsCont from './components/ProductsCont'
-import {toggleDarkMode} from '@/utils/darkMode' 
+import { toggleDarkMode } from '@/utils/darkMode'
+
 function Home() {
   return (
     <main className='home-layout'>

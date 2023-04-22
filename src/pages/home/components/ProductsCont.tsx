@@ -1,17 +1,26 @@
-import { useEffect, useState } from 'react'
-import { getProducts } from '@/services'
+//import { useEffect, useState } from 'react'
+//import { getProducts } from '@/services'
+//import { ProductType } from '@/models'
+
+import { PRODUCTS_DATA } from '@/DATA/products'
+import { useProduct } from '@/hooks'
 import { ProductType } from '@/models'
+import { memo, useMemo } from 'react'
 
 
 function ProductsCont () {
 
-  const [products, setProducts] = useState<ProductType[]>([])
+  const { addProduct } = useProduct()
 
-  useEffect(() => {
-    getProducts().then(data => setProducts(data.products))
-  }, [])
+  //const [products, setProducts] = useState<ProductType[]>([])
+  //
+  //useEffect(() => {
+  //  getProducts().then(data => setProducts(data.products))
+  //}, [])
 
-  return (
+  const products: ProductType[] = PRODUCTS_DATA
+
+  return useMemo(() => (
     <section className='products-cont'>
       {products.map(product => (
         <article key={product.id} className='product-card bg-primary'>
@@ -22,7 +31,7 @@ function ProductsCont () {
           </header>
           <footer className='product-card__footer'>
             <h3 className='text-2xl medium font-primary'>${product.price}</h3>
-            <button className='product-card__footer__button'>
+            <button onClick={() => addProduct(product)} className='product-card__footer__button'>
               <h6 className='text-sm'>
               add to card
               </h6>
@@ -32,7 +41,7 @@ function ProductsCont () {
       ))
       }
     </section>
-  )
+  ), [])
 }
 
 export default ProductsCont
