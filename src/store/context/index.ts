@@ -1,4 +1,4 @@
-export { default as StoreContext } from './StoreContext'
-export { default as StoreProvider } from './StoreProvider'
-export { default as StoreReducer } from './StoreReducer'
 export * from './models'
+export { default as storeContext } from './StoreContext'
+export { default as storeProvider } from './StoreProvider'
+export { default as storeReducer } from './StoreReducer'
