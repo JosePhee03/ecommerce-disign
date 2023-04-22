@@ -20,17 +20,19 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "types": [
+      "node",
       "vitest/globals"
     ],
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/*": ["./src/*"],
+      "@pages/*": ["src/pages/*"],
+      "@components/*": ["src/components/*"],
+      "@models/*": ["src/models/*"],
     }
   },
   "include": [
-    "src/*"
+    "src"
   ],
   "references": [
     {
