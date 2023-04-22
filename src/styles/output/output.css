@@ -318,6 +318,10 @@ body {
   color: #576CBC;
   border-radius: 4px;
 }
+.filter-button:hover, .filter-button:focus {
+  cursor: pointer;
+  background: rgba(87, 108, 188, 0.1254901961);
+}
 .filter-button__icon {
   stroke: #576CBC;
   width: 12px;
