@@ -1,2 +1,2 @@
 export * from './Products.models'
-export * from './ShoppingCart'
+export * from './ShoppingCart.models'

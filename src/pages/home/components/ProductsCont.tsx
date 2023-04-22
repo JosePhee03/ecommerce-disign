@@ -1,5 +1,6 @@
-import getProducts, { ProductType } from '@/services/getProducts'
 import { useEffect, useState } from 'react'
+import { getProducts } from '@/services'
+import { ProductType } from '@/models'
 
 
 function ProductsCont () {
