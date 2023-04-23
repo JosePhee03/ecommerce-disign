@@ -4,7 +4,6 @@ import { AddProductToStore, RemoveProductToStore, StoreActions, TypeStoreActions
 function StoreReducer (state: ShoppingCart[], action: StoreActions ): ShoppingCart[] {
   switch (action.type) {
   case TypeStoreActions.ADD:
-    console.log(state)
     return AddProductToStore(action.payload, state)
   case TypeStoreActions.REMOVE:
     return RemoveProductToStore(action.payload, state)
