@@ -1,2 +1,2 @@
-export * from './darkMode'
+export * from './useDarkMode'
 export { default as useProduct } from './useProduct'

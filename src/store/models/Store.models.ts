@@ -1,6 +1,5 @@
 import { ProductType, ShoppingCart } from '@/models'
 import { Dispatch } from 'react'
-import { ProductID } from './StoreProduct.models'
 
 export interface StoreContextInterface {
   store: ShoppingCart[]
@@ -12,7 +11,10 @@ export enum TypeStoreActions {
   REMOVE
 }
 
+export type StoreReducerAdd = (product: ProductType, store: ShoppingCart[]) => ShoppingCart[]
+export type StoreReducerRemove = (product: ProductType, store: ShoppingCart[]) => ShoppingCart[]
+
 export type StoreActions =
   | { type: TypeStoreActions.ADD, payload: ProductType }
-  | { type: TypeStoreActions.REMOVE, payload: ProductID }
+  | { type: TypeStoreActions.REMOVE, payload: ProductType }
 
