@@ -1,24 +1,11 @@
-import { FilterIcon, LogoIcon, MoonIcon, SearchIcon, ShoppingCardIcon } from '@/components/icons'
-import ProductsCont from './components/ProductsCont'
-import { toggleDarkMode } from '@/utils/darkMode'
+import { FilterIcon, SearchIcon } from '@/components/icons'
+import { ProductsCont } from './components'
+import { Header } from '@/components/header'
 
 function Home() {
   return (
     <main className='home-layout'>
-      <header className='header'>
-        <div className='header__logo'>
-          <LogoIcon />
-          <h1 className='logo-text font-primary'>Shop</h1>
-        </div>
-        <div className='header__icons'>
-          <button onClick={toggleDarkMode} className='button-icon'>
-            <MoonIcon className='icon' />
-          </button>
-          <button className='button-icon'>
-            <ShoppingCardIcon className='icon'/>
-          </button>
-        </div>
-      </header>
+      <Header />
       <section className='search-cont'>
         <SearchIcon className='icon search-cont__icon'/>
         <input type="text" className='search-cont__input bg-primary font-primary' placeholder='Smartphone, Laptop...' />

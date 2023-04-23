@@ -1,0 +1,31 @@
+@import '../../styles/_general'
+
+.header
+  display: flex
+  justify-content: space-between
+  padding: $spacing-xl 0
+
+  &__logo
+    display: flex
+    align-items: center
+    gap: $spacing-md
+
+  &__icons
+    display: flex
+    gap: $spacing-xl
+
+.shopping-cart-icon
+  position: relative
+
+  &__counter
+    display: flex
+    justify-content: center
+    align-items: center
+    width: $icon-size-md
+    height: $icon-size-md
+    background: $danger
+    color: $white
+    position: absolute
+    bottom: 0
+    right: 0
+    border-radius: 50%
