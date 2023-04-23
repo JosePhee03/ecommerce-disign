@@ -3,15 +3,13 @@
 //import { ProductType } from '@/models'
 
 import { PRODUCTS_DATA } from '@/DATA/products'
+import { ShoppingCardIcon } from '@/components/icons'
 import { useProduct } from '@/hooks'
 import { ProductType } from '@/models'
-import { memo, useMemo } from 'react'
-
 
 function ProductsCont () {
 
-  const { addProduct } = useProduct()
-
+  const { isProductInCart, addProduct, removeProduct } = useProduct()
   //const [products, setProducts] = useState<ProductType[]>([])
   //
   //useEffect(() => {
@@ -20,7 +18,7 @@ function ProductsCont () {
 
   const products: ProductType[] = PRODUCTS_DATA
 
-  return useMemo(() => (
+  return (
     <section className='products-cont'>
       {products.map(product => (
         <article key={product.id} className='product-card bg-primary'>
@@ -31,17 +29,21 @@ function ProductsCont () {
           </header>
           <footer className='product-card__footer'>
             <h3 className='text-2xl medium font-primary'>${product.price}</h3>
-            <button onClick={() => addProduct(product)} className='product-card__footer__button'>
-              <h6 className='text-sm'>
-              add to card
-              </h6>
-            </button>
+            {isProductInCart(product)
+              ? <button onClick={() => removeProduct(product)}>in the cart</button>
+              : <button onClick={() => addProduct(product)} className='product-card__footer__button'>
+                <h6 className='text-sm'>
+                  add to
+                </h6>
+                <ShoppingCardIcon className='product-card__footer__icon' />
+              </button>
+            }
           </footer>
         </article>
       ))
       }
     </section>
-  ), [])
+  )
 }
 
 export default ProductsCont
