@@ -6,7 +6,7 @@ function FooterDev() {
   return (
     <footer className='footer-dev'>
       {store.map(cart => (
-        <article>
+        <article key={cart.cartProducts.id}>
           <h3>{cart.cartProducts.id}</h3>
           <h4>{cart.cartProducts.title}</h4>
         </article>
