@@ -21,7 +21,7 @@ function ProductsCont () {
   return (
     <section className='products-cont'>
       {products.map(product => (
-        <article key={product.id} className='product-card bg-primary'>
+        <article key={product.id} className='product-card bg-primary' title={product.title}>
           <img src={product.thumbnail} alt={product.title} className='product-card__img' />
           <header className='product-card__header'>
             <h6 className='text-sm medium font-primary'>{product.title}</h6>

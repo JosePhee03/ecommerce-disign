@@ -1,18 +1,38 @@
 @import '../../../styles/_general'
+@import '../../../styles/_breakpoints'
 
 .products-cont
   display: grid
-  grid-template-columns: repeat(auto-fit, 200px)
+  grid-template-columns: repeat(2, 1fr)
   grid-column-gap: $spacing-lg
   grid-row-gap: $spacing-lg
   border-radius: $rounded-md
 
+  @media (min-width: $breakpoints-sm)
+    grid-template-columns: repeat(3, 1fr)
+    grid-column-gap: $spacing-lg + 4
+    grid-row-gap: $spacing-lg + 4
+    border-radius: $rounded-md + 4
+
+  @media (min-width: $breakpoints-md)
+    grid-template-columns: repeat(4, 1fr)
+    grid-column-gap: $spacing-lg + 8
+    grid-row-gap: $spacing-lg + 8
+    border-radius: $rounded-md + 8
+
+  @media (min-width: $breakpoints-xl)
+    grid-template-columns: repeat(6, 1fr)
+    grid-column-gap: $spacing-lg + 16
+    grid-row-gap: $spacing-lg + 16
+    border-radius: $rounded-md + 16
+
 .product-card
-  display: flex
-  flex-direction: column
+  display: grid
+  grid-template-columns: 1fr
+  grid-template-rows: auto auto 1fr
+  height: 100%
   gap: $spacing-md
   padding-bottom: $spacing-lg
-  width: 100%
   border-radius: $rounded-md
   box-shadow: $drop-shadow
   transition: 0.2s transform
@@ -23,16 +43,24 @@
 
   &__img
     width: 100%
-    height: 130px
+    aspect-ratio: 3 / 2
     border-radius: $rounded-md $rounded-md 0 0
 
   &__header
     display: flex
     flex-direction: column
     gap: $spacing-xs
-    padding: 0 $spacing-lg
+    margin: 0 $spacing-lg
+    white-space: nowrap
+    overflow: hidden
+
+    h6
+      overflow: hidden
+      text-overflow: ellipsis
 
     p
+      overflow: hidden
+      text-overflow: ellipsis
       color: $navy-100
 
   &__footer
@@ -40,6 +68,7 @@
     justify-content: space-between
     align-items: center
     padding: 0 $spacing-lg
+    align-self: end
 
     &__button
       display: flex
@@ -73,13 +102,14 @@
       background: $bg-success
       border-radius: $rounded-sm
 
-      &:hover
-        cursor: pointer
-        color: $danger
-        background: $bg-danger
+      @media (hover: hover)
+        &:hover
+          cursor: pointer
+          color: $danger
+          background: $bg-danger
 
-      &:hover > &__icon
-        stroke: $danger
+        &:hover > &__icon
+          stroke: $danger
 
       &__icon
         stroke: $success

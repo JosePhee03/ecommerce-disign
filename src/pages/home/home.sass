@@ -6,7 +6,20 @@
   grid-template-columns: 1fr
   grid-template-rows: repeat(4, auto)
   margin: $spacing-xl
+  margin-top: 0
   grid-row-gap: $spacing-xl
+
+  @media (min-width: $breakpoints-sm)
+    margin: $spacing-xl + 4
+    margin-top: 0
+
+  @media (min-width: $breakpoints-md)
+    margin: $spacing-xl + 8
+    margin-top: 0
+
+  @media (min-width: $breakpoints-xl)
+    margin: $spacing-xl + 16
+    margin-top: 0
 
 .search-cont
   display: flex
