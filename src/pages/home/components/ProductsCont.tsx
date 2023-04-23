@@ -30,12 +30,17 @@ function ProductsCont () {
           <footer className='product-card__footer'>
             <h3 className='text-2xl medium font-primary'>${product.price}</h3>
             {isProductInCart(product)
-              ? <button onClick={() => removeProduct(product)}>in the cart</button>
+              ? <button onClick={() => removeProduct(product)} className='product-card__footer__button-in-cart'>
+                <h6 className='text-sm'>
+                  in the
+                </h6>
+                <ShoppingCardIcon className='product-card__footer__button-in-cart__icon' />
+              </button>
               : <button onClick={() => addProduct(product)} className='product-card__footer__button'>
                 <h6 className='text-sm'>
                   add to
                 </h6>
-                <ShoppingCardIcon className='product-card__footer__icon' />
+                <ShoppingCardIcon className='product-card__footer__button__icon' />
               </button>
             }
           </footer>
