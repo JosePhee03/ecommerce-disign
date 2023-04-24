@@ -29,8 +29,7 @@
 .product-card
   display: grid
   grid-template-columns: 1fr
-  grid-template-rows: auto auto 1fr
-  height: 100%
+  grid-template-rows: auto auto auto
   gap: $spacing-md
   padding-bottom: $spacing-lg
   border-radius: $rounded-md
@@ -89,6 +88,11 @@
       &__icon
         stroke: $navy-500
         width: $icon-size-sm
+        stroke-width: 3
+
+        @media (min-width: $breakpoints-2xl)
+          width: $icon-size-sm + 2
+          stroke-width: 3
 
     &__button-in-cart
       display: flex
@@ -110,7 +114,16 @@
 
         &:hover > &__icon
           stroke: $danger
+          width: $icon-size-sm
+          stroke-width: 3
+
+          @media (min-width: $breakpoints-2xl)
+            width: $icon-size-sm + 2
 
       &__icon
         stroke: $success
         width: $icon-size-sm
+        stroke-width: 3
+
+        @media (min-width: $breakpoints-2xl)
+          width: $icon-size-sm + 2

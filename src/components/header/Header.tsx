@@ -12,7 +12,7 @@ function Header() {
   return (
     <header className='header'>
       <div className='header__logo'>
-        <LogoIcon />
+        <LogoIcon className='logo-icon' />
         <h1 className='logo-text font-primary'>Shop</h1>
       </div>
       <div className='header__icons'>

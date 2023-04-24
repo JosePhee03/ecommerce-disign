@@ -8,6 +8,9 @@ html
   font-weight: 400
   font-style: normal
 
+  @media (min-width: $breakpoints-2xl)
+    font-size: 14px
+
 html[data-theme="dark"]
   body
     background: $dark-navy-400
@@ -32,6 +35,12 @@ body
   stroke: $dark-navy-500
   width: $icon-size-xl
   height: $icon-size-xl
+  stroke-width: 2
+
+  @media (min-width: $breakpoints-2xl)
+    width: $icon-size-xl + 4
+    height: $icon-size-xl + 4
+    stroke-width: 3
 
 .bg-primary
   background: $white
