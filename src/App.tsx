@@ -1,14 +1,17 @@
 import { Home } from '@/pages'
 import { StoreProvider } from '@/store'
 import { FooterDev } from '@/components'
+import { BrowserRouter } from 'react-router-dom'
 
-function App() {
+function App () {
 
   return (
-    <StoreProvider>
-      <Home />
-      <FooterDev />
-    </StoreProvider>
+    <BrowserRouter>
+      <StoreProvider>
+        <Home />
+        <FooterDev />
+      </StoreProvider>
+    </BrowserRouter>
   )
 }
 
