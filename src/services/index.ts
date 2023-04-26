@@ -1,1 +1,2 @@
-export { default as getProducts } from './getProducts'
+export * from './getProducts'
+export * from './apiURL'
