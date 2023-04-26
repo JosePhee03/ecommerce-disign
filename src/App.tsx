@@ -1,14 +1,18 @@
 import { Home } from '@/pages'
 import { StoreProvider } from '@/store'
 import { FooterDev } from '@/components'
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 function App () {
 
   return (
     <BrowserRouter>
       <StoreProvider>
-        <Home />
+        <Routes>
+          <Route path='/' element={<Home />}>
+            <Route path='/:category' />
+          </Route>
+        </Routes>
         <FooterDev />
       </StoreProvider>
     </BrowserRouter>
