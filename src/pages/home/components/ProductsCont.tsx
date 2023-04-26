@@ -1,22 +1,9 @@
-//import { useEffect, useState } from 'react'
-//import { getProducts } from '@/services'
-//import { ProductType } from '@/models'
-
-import { PRODUCTS_DATA } from '@/DATA/products'
 import { ShoppingCardIcon } from '@/components/icons'
 import { useProduct } from '@/hooks'
 import { ProductType } from '@/models'
 
-function ProductsCont () {
-
+function ProductsCont ({ products }: {products: ProductType[]}) {
   const { isProductInCart, addProduct, removeProduct } = useProduct()
-  //const [products, setProducts] = useState<ProductType[]>([])
-  //
-  //useEffect(() => {
-  //  getProducts().then(data => setProducts(data.products))
-  //}, [])
-
-  const products: ProductType[] = PRODUCTS_DATA
 
   return (
     <section className='products-cont'>
