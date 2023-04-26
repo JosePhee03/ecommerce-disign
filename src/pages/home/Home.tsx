@@ -1,23 +1,34 @@
-import { FilterIcon, SearchIcon } from '@/components/icons'
-import { ProductsCont } from './components'
-import { Header } from '@/components/header'
+import { FilterCont, ProductsCont, SearchCont } from './components'
+import { Header } from '@/components'
+import { PRODUCTS_DATA } from '@/DATA/products'
+import { ProductType } from '@/models'
+import { searchProducts } from '@/services'
+import { useEffect, useState } from 'react'
+import { useLocation, useSearchParams } from 'react-router-dom'
 
-function Home() {
+function Home () {
+  const [ products, setProducts ] = useState<ProductType[]>(PRODUCTS_DATA)
+  const location = useLocation()
+  const [ searchParams ] = useSearchParams()
+
+  useEffect(() => {
+    const categoryParam = searchParams.get('category')
+    if (categoryParam !== null) {
+      const productRes = searchProducts(categoryParam)
+      setProducts(productRes)
+    }
+
+  }, [ location ])
+
   return (
     <main className='home-layout'>
       <Header />
-      <section className='search-cont'>
-        <SearchIcon className='icon search-cont__icon'/>
-        <input type="text" className='search-cont__input bg-primary font-primary' placeholder='Smartphone, Laptop...' />
-      </section>
-      <section className='filter-cont'>
-        <h2 className='title-text medium font-primary'>Products</h2>
-        <button className='filter-button'>
-          <h6 className='text-sm'>Filters</h6>
-          <FilterIcon className='filter-button__icon'/>
-        </button>
-      </section>
-      <ProductsCont />
+      <SearchCont setProducts={setProducts}/>
+      <FilterCont />
+      {products.length === 0
+        ? <h3>Not Fount</h3>
+        : <ProductsCont products={products} />
+      }
     </main>
   )
 }
