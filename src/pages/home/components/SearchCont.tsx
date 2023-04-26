@@ -1,19 +1,15 @@
 import { SearchIcon } from '@/components'
-import { ProductType } from '@/models'
-import { searchProducts } from '@/services'
+import { useSearchProduct } from '@/hooks'
 import { FormEvent } from 'react'
-import { useSearchParams } from 'react-router-dom'
 
-function SearchCont ({ setProducts }: { setProducts: React.Dispatch<React.SetStateAction<ProductType[]>> }) {
-  const [ , setSearchParams ] = useSearchParams()
+function SearchCont () {
+  const { setQueryParams } = useSearchProduct()
 
   const handleOnSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     const formData = new FormData(event.target as HTMLFormElement)
     const { search: data } = Object.fromEntries(formData)
-    setSearchParams({ 'q': data as string })
-    const productRes = searchProducts(data as string)
-    setProducts(productRes)
+    setQueryParams(data as string)
   }
 
   return (
