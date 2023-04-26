@@ -1,0 +1,48 @@
+@import '../../../styles/_general'
+@import '../../../styles/_breakpoints'
+
+.search-cont
+  display: flex
+  justify-content: center
+
+  &__form
+    width: 100%
+    display: flex
+    box-shadow: $drop-shadow
+
+    @media (min-width: $breakpoints-md)
+      width: 600px
+
+    &__input
+      width: 100%
+      padding: $spacing-xl
+      border-top-left-radius: $rounded-md
+      border-bottom-left-radius: $rounded-md
+      border: $border-light-navy-200
+      border-right: none
+
+      &:focus
+        outline: none
+        box-shadow: $focus-shadow
+
+    &__button
+      display: flex
+      justify-content: center
+      align-items: center
+      border-top-right-radius: $rounded-md
+      border-bottom-right-radius: $rounded-md
+      border: $border-light-navy-200
+      border-left: none
+      padding: $spacing-xl
+
+      &:focus
+        outline: none
+        box-shadow: $focus-shadow
+
+      &__icon
+        width: $icon-size-xl
+        stroke-width: 2
+
+        @media (min-width: $breakpoints-2xl)
+          width: $icon-size-xl + 4
+          stroke-width: 3
