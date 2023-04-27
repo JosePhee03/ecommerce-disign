@@ -1,8 +1,8 @@
-import { useProduct } from '@/hooks'
+import { useProductsCart } from '@/hooks'
 import './footer_dev.sass'
 
-function FooterDev() {
-  const { store } = useProduct()
+function FooterDev () {
+  const { store } = useProductsCart()
   return (
     <footer className='footer-dev'>
       {store.map(cart => (

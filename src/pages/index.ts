@@ -1,2 +1,5 @@
-export { default as ProductsCont } from './home/components/ProductsCont'
+export * from './home/components/filter_cont'
+export * from './home/components'
+export * from './home/components/products_cont'
+export * from './home/components/search_cont'
 export * from './home'

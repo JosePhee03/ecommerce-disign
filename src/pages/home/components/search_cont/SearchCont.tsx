@@ -1,6 +1,7 @@
+import { FormEvent } from 'react'
+
 import { SearchIcon } from '@/components'
 import { useSearchProduct } from '@/hooks'
-import { FormEvent } from 'react'
 
 function SearchCont () {
   const { setQueryParams } = useSearchProduct()

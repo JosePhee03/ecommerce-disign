@@ -3,8 +3,8 @@ import { render, screen } from '@testing-library/react'
 import { StoreProvider } from '@/store'
 import Home from './Home'
 
-describe('Home component test', () => {
-  beforeAll(() => {
+describe('<Home/> component test', () => {
+  beforeEach(() => {
     render(
       <BrowserRouter>
         <StoreProvider>

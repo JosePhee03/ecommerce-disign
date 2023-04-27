@@ -1,11 +1,9 @@
 import { LogoIcon, MoonIcon, ShoppingCardIcon, SunIcon } from '@/components/icons'
-import { useDarkMode, useProduct } from '@/hooks'
+import { useDarkMode, useProductsCart } from '@/hooks'
 
-
-function Header() {
-  const { store } = useProduct()
+function Header () {
+  const { store } = useProductsCart()
   const { theme, toggleTheme } = useDarkMode()
-
 
   const mountProducts = store.length
 
@@ -17,7 +15,7 @@ function Header() {
       </div>
       <div className='header__icons'>
         <button onClick={toggleTheme} className='button-icon'>
-          {theme === 'dark' 
+          {theme === 'dark'
             ? <MoonIcon className='icon' />
             : <SunIcon className='icon' />
           }

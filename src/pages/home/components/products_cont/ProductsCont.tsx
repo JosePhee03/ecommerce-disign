@@ -1,8 +1,8 @@
 import { ShoppingCardIcon } from '@/components/icons'
-import { useProduct, useSearchProduct } from '@/hooks'
+import { useProductsCart, useSearchProduct } from '@/hooks'
 
 function ProductsCont () {
-  const { isProductInCart, addProduct, removeProduct } = useProduct()
+  const { isProductInCart, addProduct, removeProduct } = useProductsCart()
   const { products } = useSearchProduct()
 
   return (

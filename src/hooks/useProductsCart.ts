@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import { ProductType } from '@/models'
 import { StoreContext, StoreContextInterface, TypeStoreActions } from '@/store'
 
-function useProduct () {
+function useProductsCart () {
   const { store, dispatch } = useContext(StoreContext) as StoreContextInterface
 
   const isProductInCart = (product: ProductType) => store.some(cart => cart.cartProducts.id === product.id)
@@ -12,4 +12,4 @@ function useProduct () {
   return { store, addProduct, removeProduct, isProductInCart }
 }
 
-export default useProduct
+export default useProductsCart
