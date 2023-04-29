@@ -1,13 +1,23 @@
-import { apiResponseType } from '@/models'
+import { ProductType, SearchProductType, apiResponseType } from '@/models'
 
-function fromApiResponseToProducts (apiResponse: apiResponseType) {
+function fromApiResponseToProducts (apiResponse: apiResponseType): ProductType[] {
   const { products } = apiResponse
-  return {
-    products
-  }
+  return products.map(product => {
+    return {
+      id: product.id,
+      title: product.title,
+      description: product.description,
+      price: product.price,
+      brand: product.brand,
+      category: product.category,
+      thumbnail: product.thumbnail
+    }
+  })
 }
 
-export function getProducts (apiURL: string) {
+export function getProducts (category: SearchProductType['category']) {
+  const searchCategory = category == undefined ? '' : `category/${category}`
+  const apiURL = `https://dummyjson.com/products/${searchCategory}`
   return fetch(apiURL)
     .then(res => res.json())
     .then(fromApiResponseToProducts)

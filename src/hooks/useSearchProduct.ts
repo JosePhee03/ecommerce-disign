@@ -1,32 +1,30 @@
-import { PRODUCTS_DATA } from '@/DATA/products'
-import { ProductType } from '@/models'
 import { useEffect, useState } from 'react'
 import { useParams, useSearchParams } from 'react-router-dom'
-import { CategoryParam, ParamsType, QueryType, SearchProductType } from './models'
+
+import { ProductType, QueryType, SearchProductType } from '@/models'
+import { getProducts } from '@/services'
 
 function useSearchProduct () {
-  const INITIAL_STATE_PRODUCTS = PRODUCTS_DATA
-  const [ products, setProducts ] = useState<ProductType[]>(INITIAL_STATE_PRODUCTS)
+  const [ products, setProducts ] = useState<ProductType[]>([])
 
   const [ searchParam, setSearchParam ] = useSearchParams()
-  const params = useParams<CategoryParam>()
+  const params = useParams<Pick<SearchProductType, 'category'>>()
 
-  const setQueryParams = (query: ParamsType[QueryType.query]) => {
-    console.log(query)
-    if (query === '') return setSearchParam()
+  const setQueryParams = (query: SearchProductType['query']) => {
+    if (query === null) return setSearchParam()
     setSearchParam({ [QueryType.query]: query })
   }
 
-  const searchProduct = ({ category, data }: SearchProductType)  => {
-    const newProducts: ProductType[] = INITIAL_STATE_PRODUCTS
+  const searchProduct = ({ category, query }: SearchProductType)  => {
+    const newProducts = [ ...products ]
     const productsByCategory = SearchProductByCategory(newProducts, category)
-    const productsByTitle = SearchProductByTitle(productsByCategory, data)
+    const productsByTitle = SearchProductByTitle(productsByCategory, query)
     return productsByTitle
   }
 
-  const SearchProductByTitle = (products: ProductType[], data: SearchProductType['data']) => {
-    if (data === null) return products
-    const lowerCaseData = data.toLowerCase()
+  const SearchProductByTitle = (products: ProductType[], query: SearchProductType['query']) => {
+    if (query === null) return products
+    const lowerCaseData = query.toLowerCase()
     const FilterProductByTitle = products.filter(p => p.title.toLowerCase().includes(lowerCaseData))
     return FilterProductByTitle
   }
@@ -40,11 +38,17 @@ function useSearchProduct () {
   useEffect(() => {
     const showNewProducts = searchProduct({
       category: params.category,
-      data: searchParam.get(QueryType.query)
+      query: searchParam.get(QueryType.query)
     })
-
     setProducts(showNewProducts)
   }, [ params ])
+
+  useEffect(() => {
+    getProducts(params.category)
+      .then(resProducts => setProducts(resProducts))
+
+    console.log('/home')
+  }, [])
 
   return { products, setQueryParams }
 
