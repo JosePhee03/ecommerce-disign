@@ -4,7 +4,7 @@ interface svgProps {
   className: string
 }
 
-export function LogoIcon({ className }: svgProps) {
+export function LogoIcon ({ className }: svgProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +31,7 @@ export function LogoIcon({ className }: svgProps) {
   )
 }
 
-export function ShoppingCardIcon({ className }: svgProps) {
+export function ShoppingCardIcon ({ className }: svgProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -48,7 +48,7 @@ export function ShoppingCardIcon({ className }: svgProps) {
   )
 }
 
-export function SearchIcon({ className }: svgProps) {
+export function SearchIcon ({ className }: svgProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -65,7 +65,7 @@ export function SearchIcon({ className }: svgProps) {
   )
 }
 
-export function MoonIcon({ className }: svgProps) {
+export function MoonIcon ({ className }: svgProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +82,7 @@ export function MoonIcon({ className }: svgProps) {
   )
 }
 
-export function SunIcon({ className }: svgProps) {
+export function SunIcon ({ className }: svgProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -102,7 +102,7 @@ export function SunIcon({ className }: svgProps) {
   )
 }
 
-export function FilterIcon({ className }: svgProps) {
+export function FilterIcon ({ className }: svgProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
