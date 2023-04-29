@@ -81,19 +81,19 @@
       background: $navy-500-trasparent
       border-radius: $rounded-sm
 
+      &__icon
+        stroke: $navy-500
+        width: $icon-size-sm
+        stroke-width: 3
+
+        @media (min-width: $breakpoints-2xl)
+          width: $icon-size-sm + 2
+          stroke-width: 4
+
       @media (hover: hover)
         &:hover
           cursor: pointer
           background: $hover-button
-
-        &__icon
-          stroke: $navy-500
-          width: $icon-size-sm
-          stroke-width: 3
-
-          @media (min-width: $breakpoints-2xl)
-            width: $icon-size-sm + 2
-            stroke-width: 3
 
     &__button-in-cart
       display: flex
@@ -118,8 +118,8 @@
           width: $icon-size-sm
           stroke-width: 3
 
-          @media (min-width: $breakpoints-2xl)
-            width: $icon-size-sm + 2
+      @media (min-width: $breakpoints-2xl)
+        width: $icon-size-sm + 2
 
       &__icon
         stroke: $success
