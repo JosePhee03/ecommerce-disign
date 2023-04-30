@@ -1,4 +1,5 @@
 export { default as Home } from './Home'
+export * from './components/filter_cont/filter-modal'
 export * from './components/filter_cont'
 export * from './components'
 export * from './components/products_cont'

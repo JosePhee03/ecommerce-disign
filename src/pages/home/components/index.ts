@@ -1,3 +1,4 @@
-export { default as FilterCont } from './filter_cont/FilterCont'
-export { default as ProductsCont } from './products_cont/ProductsCont'
-export { default as SearchCont } from './search_cont/SearchCont'
+export * from './filter_cont/filter-modal'
+export * from './filter_cont'
+export * from './products_cont'
+export * from './search_cont'
