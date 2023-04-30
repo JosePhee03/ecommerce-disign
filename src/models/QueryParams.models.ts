@@ -1,12 +1,9 @@
-import { CATEGORIES } from '@/constant/categories'
+import { category } from './Products.models'
 
 export enum QueryType {
   query = 'q',
   category = 'category'
 }
-
-const categoriesArray = Object.values(CATEGORIES)
-type category = (typeof categoriesArray)[number]
 
 export interface ParamsType {
   [QueryType.category]: category

@@ -19,4 +19,4 @@ export const CATEGORIES = {
   AUTOMOTIVE: 'automotive',
   MOTORCYCLE: 'motorcycle',
   LIGHTING: 'lighting',
-}
+} as const

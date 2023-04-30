@@ -1,10 +1,15 @@
+import { CATEGORIES } from '@/constant'
+
+const ArrayfromCategories = Object.values(CATEGORIES)
+export type category =  (typeof ArrayfromCategories)[number]
+
 export interface ProductType {
   id: number,
   title: string;
   description: string;
   price: number;
   brand: string;
-  category: string;
+  category: category;
   thumbnail: string;
 }
 
