@@ -1,0 +1,104 @@
+@import '../../../../../styles/_general'
+
+.product-card
+  display: grid
+  grid-template-columns: 1fr
+  grid-template-rows: auto auto auto
+  gap: $spacing-md
+  padding-bottom: $spacing-lg
+  border-radius: $rounded-md
+  box-shadow: $drop-shadow
+  transition: 0.2s transform
+
+  &:hover
+    cursor: pointer
+    scale: 1.02
+
+  &__img
+    width: 100%
+    aspect-ratio: 3 / 2
+    border-radius: $rounded-md $rounded-md 0 0
+
+  &__header
+    display: flex
+    flex-direction: column
+    gap: $spacing-xs
+    margin: 0 $spacing-lg
+    white-space: nowrap
+    overflow: hidden
+
+    h6
+      overflow: hidden
+      text-overflow: ellipsis
+
+    p
+      overflow: hidden
+      text-overflow: ellipsis
+      color: $navy-100
+
+  &__footer
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 0 $spacing-lg
+    align-self: end
+
+    &__button
+      display: flex
+      flex-direction: row
+      justify-content: center
+      align-items: center
+      padding: $spacing-xs $spacing-sm
+      gap: $spacing-sm
+      color: $navy-500
+      border: none
+      background: $navy-500-trasparent
+      border-radius: $rounded-sm
+
+      &__icon
+        stroke: $navy-500
+        width: $icon-size-sm
+        stroke-width: 3
+
+        @media (min-width: $breakpoints-2xl)
+          width: $icon-size-sm + 2
+          stroke-width: 4
+
+      @media (hover: hover)
+        &:hover
+          cursor: pointer
+          background: $hover-button
+
+    &__button-in-cart
+      display: flex
+      flex-direction: row
+      justify-content: center
+      align-items: center
+      padding: $spacing-xs $spacing-sm
+      gap: $spacing-sm
+      color: $success
+      border: none
+      background: $bg-success
+      border-radius: $rounded-sm
+
+      @media (hover: hover)
+        &:hover
+          cursor: pointer
+          color: $danger
+          background: $bg-danger
+
+        &:hover > &__icon
+          stroke: $danger
+          width: $icon-size-sm
+          stroke-width: 3
+
+      @media (min-width: $breakpoints-2xl)
+        width: $icon-size-sm + 2
+
+      &__icon
+        stroke: $success
+        width: $icon-size-sm
+        stroke-width: 3
+
+        @media (min-width: $breakpoints-2xl)
+          width: $icon-size-sm + 2
