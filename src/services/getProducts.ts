@@ -15,9 +15,10 @@ function fromApiResponseToProducts (apiResponse: apiResponseType): ProductType[]
   })
 }
 
-export function getProducts (category: SearchProductType['category']) {
+export function getProducts (category: SearchProductType['category'], page = 0, limit = 30) {
+  const skip = page * limit
   const searchCategory = category == undefined ? '' : `category/${category}`
-  const apiURL = `https://dummyjson.com/products/${searchCategory}`
+  const apiURL = `https://dummyjson.com/products/${searchCategory}?skip=${skip}&limit=${limit}`
   return fetch(apiURL)
     .then(res => res.json())
     .then(fromApiResponseToProducts)
