@@ -1,10 +1,10 @@
-import { FormEvent } from 'react'
+import { FormEvent, useMemo } from 'react'
 
 import { SearchIcon } from '@/components'
 import { useSearchProduct } from '@/hooks'
 
 function SearchCont () {
-  const { setQueryParams } = useSearchProduct()
+  const { products, setQueryParams } = useSearchProduct()
 
   const handleOnSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -13,7 +13,7 @@ function SearchCont () {
     setQueryParams(data as string)
   }
 
-  return (
+  return useMemo(() => (
     <section className='search-cont'>
       <form className='search-cont__form' onSubmit={handleOnSubmit}>
         <input type="text" name="search" className='search-cont__form__input bg-primary font-primary' placeholder='Smartphone, Laptop...' />
@@ -22,7 +22,7 @@ function SearchCont () {
         </button>
       </form>
     </section>
-  )
+  ), [ products ])
 }
 
 export default SearchCont
