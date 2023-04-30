@@ -9,18 +9,19 @@
     display: flex
     align-items: center
     gap: $spacing-md
+    text-decoration: none
 
   &__icons
     display: flex
     gap: $spacing-xl
 
 .logo-icon
-  width: 28px
-  width: 28px
+  width: $icon-size-xl
+  height: $icon-size-xl
 
   @media (min-width: $breakpoints-2xl)
-    width: 40px
-    width: 40px
+    width: $icon-size-xl + 4
+    height: $icon-size-xl + 4
 
 .shopping-cart-icon
   position: relative
@@ -36,4 +37,4 @@
     position: absolute
     bottom: 0
     right: 0
-    border-radius: 50%
+    border-radius: 100%
