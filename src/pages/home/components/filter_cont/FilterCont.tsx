@@ -1,6 +1,8 @@
-import { FilterIcon } from '@/components'
 import { useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
+
+import { FilterIcon } from '@/components'
+import { FilterModal } from './filter-modal'
 
 function FilterCont () {
   const [ showModal, setShowModal ] = useState<boolean>(false)
@@ -15,26 +17,7 @@ function FilterCont () {
           <h6 className='text-sm'>Filters</h6>
           <FilterIcon className='filter-cont__button__icon' />
         </button>
-        {showModal &&
-          <article className='modal'>
-            <header className='modal__header'>
-              <button className='modal__header__button-closezyyyyyyy medium'>x</button>
-              <button className='modal__header__button-apply text-xlzyyyyyyy medium'>Aplicar</button>
-            </header>
-            <select name="category" id="select-category">
-              <option value="smartphone">smartphone</option>
-              <option value="laptop">laptop</option>
-            </select>
-            <label htmlFor="lowest-price">
-              <input type="radio" name="price" id="lowest-price" />
-              lowest-price
-            </label>
-            <label htmlFor="highest-price">
-              <input type="radio" name="price" id="highest-price" />
-              highest-price
-            </label>
-          </article>
-        }
+        {showModal && <FilterModal setShowModal={setShowModal} />}
       </div>
       {param &&
       <div className='filter-cont__filter'>

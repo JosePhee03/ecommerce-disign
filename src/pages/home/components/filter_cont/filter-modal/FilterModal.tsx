@@ -1,0 +1,50 @@
+import { ChevronDownIcon, CloseIcon, DoneIcon } from '@/components'
+import { CATEGORIES } from '@/constant'
+import { Dispatch, FormEvent, SetStateAction } from 'react'
+import { createPortal } from 'react-dom'
+import { useNavigate } from 'react-router-dom'
+
+function FilterModal ({ setShowModal }: {setShowModal: Dispatch<SetStateAction<boolean>>}) {
+  const navigate = useNavigate()
+
+  const handleOnSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    const formData = new FormData(event.target as HTMLFormElement)
+    const { category } = Object.fromEntries(formData)
+    navigate(`/${category}`)
+    setShowModal(false)
+  }
+
+  return (
+    <>
+      {createPortal(<div onClick={() => setShowModal(false)} className='backdrop-modal'></div>, document.getElementById('portal') as HTMLElement)}
+      <article className='modal bg-body'>
+        <form onSubmit={handleOnSubmit} className='modal__form'>
+          <header className='modal__header'>
+            <button onClick={() => setShowModal(false)} className='modal__header__button close'>
+              <CloseIcon className='modal__header__button__icon-close icon' />
+            </button>
+            <h2 className='title-text medium font-primary'>Filter</h2>
+            <button className='modal__header__button done'>
+              <DoneIcon className='modal__header__button__icon-done icon' />
+            </button>
+          </header>
+          <div className='select-layout'>
+            <label htmlFor="select-category" className='category-label text-lg'>Categories</label>
+            <div className='select-cont'>
+              <select className='select-cont__input bg-primary font-primary' name="category" id="select-category">
+                {Object.values(CATEGORIES).map(category =>
+                  <option className='select-cont__input__option' key={category}>{category}</option>
+                )
+                }
+              </select>
+              <ChevronDownIcon className='select-cont__icon' />
+            </div>
+          </div>
+        </form>
+      </article>
+    </>
+  )
+}
+
+export default FilterModal
