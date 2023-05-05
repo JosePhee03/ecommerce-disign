@@ -1,4 +1,4 @@
-import { Home } from '@/pages'
+import { DetailsProduct, Home } from '@/pages'
 import { StoreProvider } from '@/store'
 import { FooterDev } from '@/components'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
@@ -12,6 +12,7 @@ function App () {
           <Route path='/' element={<Home />}>
             <Route path='/:category' />
           </Route>
+          <Route path='/products/:id' element={<DetailsProduct />} ></Route>
         </Routes>
         <FooterDev />
       </StoreProvider>
