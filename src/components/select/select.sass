@@ -1,0 +1,33 @@
+@import '../../styles/_general'
+
+.select-cont
+  position: relative
+  display: flex
+  align-items: center
+  box-shadow: $center-shadow
+
+  &__input.select-mini
+    padding: 0.1em 2em 0.1em 0.4em
+
+  &__input
+    border: $border-light-navy-200
+    width: 100%
+    appearance: none
+    -webkit-appearance: none
+    -moz-appearance: none
+
+    border-radius: $rounded-sm
+    padding: 0.4em 2em 0.4em 1em
+    cursor: pointer
+
+    &__option-selected
+      background: red
+
+  &__icon
+    width: $icon-size-md
+    position: absolute
+    right: $spacing-md
+    height: $icon-size-md
+    stroke: $light-navy-200
+    stroke-width: 3
+    pointer-events: none

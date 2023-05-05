@@ -6,7 +6,7 @@
   display: grid
   grid-template-columns: auto auto
   grid-column-gap: 0px
-  grid-row-gap: 0px
+  grid-row-gap: $spacing-md
   justify-content: space-between
   align-items: center
 
@@ -28,8 +28,13 @@
     &__icon
       stroke: $navy-500
       width: $icon-size-xs
-      stroke-width: 2
+      stroke-width: 3
 
       @media (min-width: $breakpoints-2xl)
         width: $icon-size-xs + 4
-        stroke-width: 3
+        stroke-width: 4
+
+  &__description
+    display: flex
+    flex-direction: column
+    gap: $spacing-md
