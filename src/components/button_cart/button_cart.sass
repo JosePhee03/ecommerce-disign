@@ -1,0 +1,47 @@
+@import '../../styles/_general'
+
+.button-normal, .button-in-cart
+  display: flex
+  justify-content: center
+  align-items: center
+  padding: 0.2em 0.4em
+  gap: $spacing-sm
+  border-radius: $rounded-sm
+  border: none
+
+  @media (hover: hover)
+  &:hover
+    cursor: pointer
+
+  &__icon
+    width: 1em
+    stroke-width: 3
+    @media (min-width: $breakpoints-2xl)
+      width: $icon-size-sm + 2
+      stroke-width: 4
+
+.button-normal
+  color: $navy-500
+  background: $navy-500-trasparent
+
+  @media (hover: hover)
+    &:hover
+      background: $hover-button
+
+  &__icon
+    stroke: $navy-500
+
+.button-in-cart
+  color: $success
+  background: $bg-success
+
+  @media (hover: hover)
+    &:hover
+      color: $danger
+      background: $bg-danger
+
+    &:hover > &__icon
+      stroke: $danger
+
+  &__icon
+    stroke: $success

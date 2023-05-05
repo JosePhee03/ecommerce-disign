@@ -1,16 +1,22 @@
-import {  useSearchProduct } from '@/hooks'
+import { useSearchProduct } from '@/hooks'
 import { ProductCard } from './product_cart'
+import { BanIcon, RotateIcon } from '@/components'
 
 function ProductsCont () {
   const { products, isLoanding, isError } = useSearchProduct()
 
   return (
-    <section className='products-cont'>
-      {isLoanding && !isError && <h1 className='tittle-text'>Loading...</h1>}
-      {isError && !isLoanding && <h1 className='tittle-text'>Error conection</h1>}
-      {!isError && !isLoanding && products.length === 0 && <h1 className='tittle-text'>Producto no Encontrado</h1>}
-      {!isError && !isLoanding && products.length !== 0 && <ProductCard products={products} />}
-    </section>
+    <>
+      {isLoanding && !isError && <div className='center'><span className="loader"></span></div>}
+      {isError && !isLoanding && <div className='center'><h1 className='title-text font-primary'>Connection error</h1><RotateIcon className='icon-error' /><button className='button-error' onClick={() => history.go()}>Refresh</button></div>}
+      {!isError && !isLoanding && products.length === 0 && <div className='center'><h1 className='title-text font-primary'>No results found</h1><BanIcon className='icon-error' /><button className='button-error' onClick={() => history.back()}>Back</button></div>}
+      {!isError && !isLoanding && products.length !== 0 &&
+       <section className='products-cont'>
+         <ProductCard products={products} />
+       </section>
+      }
+    </>
+
   )
 }
 
