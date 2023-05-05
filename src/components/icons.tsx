@@ -1,10 +1,8 @@
-import React from 'react'
-
-interface svgProps {
+interface SvgProps {
   className: string
 }
 
-export function LogoIcon ({ className }: svgProps) {
+export function LogoIcon ({ className }: SvgProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +29,7 @@ export function LogoIcon ({ className }: svgProps) {
   )
 }
 
-export function ShoppingCardIcon ({ className }: svgProps) {
+export function ShoppingCardIcon ({ className }: SvgProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -48,7 +46,7 @@ export function ShoppingCardIcon ({ className }: svgProps) {
   )
 }
 
-export function SearchIcon ({ className }: svgProps) {
+export function SearchIcon ({ className }: SvgProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -65,7 +63,7 @@ export function SearchIcon ({ className }: svgProps) {
   )
 }
 
-export function MoonIcon ({ className }: svgProps) {
+export function MoonIcon ({ className }: SvgProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +80,7 @@ export function MoonIcon ({ className }: svgProps) {
   )
 }
 
-export function SunIcon ({ className }: svgProps) {
+export function SunIcon ({ className }: SvgProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -102,7 +100,7 @@ export function SunIcon ({ className }: svgProps) {
   )
 }
 
-export function FilterIcon ({ className }: svgProps) {
+export function FilterIcon ({ className }: SvgProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -119,7 +117,7 @@ export function FilterIcon ({ className }: svgProps) {
   )
 }
 
-export function CloseIcon ({ className }: svgProps) {
+export function CloseIcon ({ className }: SvgProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -136,7 +134,7 @@ export function CloseIcon ({ className }: svgProps) {
   )
 }
 
-export function DoneIcon ({ className }: svgProps) {
+export function DoneIcon ({ className }: SvgProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -153,7 +151,7 @@ export function DoneIcon ({ className }: svgProps) {
   )
 }
 
-export function ChevronDownIcon ({ className }: svgProps) {
+export function ChevronDownIcon ({ className }: SvgProps) {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -165,6 +163,110 @@ export function ChevronDownIcon ({ className }: svgProps) {
         strokeLinecap='round'
         strokeLinejoin='round'
         d='M6 9l6 6 6-6'
+      ></path>
+    </svg>
+  )
+}
+
+export function RotateIcon ({ className }: SvgProps) {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      fill='none'
+      className={className}
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      viewBox='0 0 24 24'
+    >
+      <path d='M3 2v6h6'></path>
+      <path d='M3 13a9 9 0 103-7.7L3 8'></path>
+    </svg>
+  )
+}
+
+export function BanIcon ({ className }: SvgProps) {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      fill='none'
+      className={className}
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      viewBox='0 0 24 24'
+    >
+      <circle cx='12' cy='12' r='10'></circle>
+      <path d='M4.93 4.93L19.07 19.07'></path>
+    </svg>
+  )
+
+}
+
+export function ArrowLeftIcon ({ className }: SvgProps) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      className={className}
+
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      viewBox="0 0 24 24"
+    >
+      <path d="M19 12L5 12"></path>
+      <path d="M12 19L5 12 12 5"></path>
+    </svg>
+  )
+}
+
+export function StarFillIcon ({ className }: SvgProps) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      className={className}
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+      ></path>
+    </svg>
+  )
+}
+
+export function StartMidIcon ({ className }: SvgProps) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      className={className}
+    >
+      <path
+        d="M5.82 21.02L12 17.77V2L8.91 8.26 2 9.27l5 4.87-1.18 6.88z"
+      ></path>
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77M12 2L8.91 8.26 2 9.27l5 4.87-1.18 6.88L12 17.77M12 2v15.77"
+      ></path>
+    </svg>
+  )
+}
+
+export function StartIcon ({ className }: SvgProps) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      fill="none"
+      viewBox="0 0 24 24"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
       ></path>
     </svg>
   )
