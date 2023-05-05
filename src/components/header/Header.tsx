@@ -1,19 +1,40 @@
-import { LogoIcon, MoonIcon, ShoppingCardIcon, SunIcon } from '@/components/icons'
+import { ArrowLeftIcon, LogoIcon, MoonIcon, ShoppingCardIcon, SunIcon } from '@/components/icons'
 import { useDarkMode, useProductsCart } from '@/hooks'
 import { useMemo } from 'react'
 import { Link } from 'react-router-dom'
 
-function Header () {
+interface HeaderProps {
+  variant?: 'home'
+  text: string
+}
+
+function Header ({ variant, text }: HeaderProps) {
   const { store } = useProductsCart()
   const { theme, toggleTheme } = useDarkMode()
 
   const mountProducts = store.length
 
+  const HeaderVariant = ({ variant, text }: HeaderProps): JSX.Element => {
+    switch (variant) {
+    case 'home':
+      return (
+        <>
+          <LogoIcon className='logo-icon' />
+          <h1 className='logo-text font-primary'>{text}</h1>
+        </>)
+    default:
+      return (
+        <>
+          <ArrowLeftIcon className='icon' />
+          <h1 className='logo-text font-primary'>{text}</h1>
+        </>)
+    }
+  }
+
   return useMemo(() => (
     <header className='header'>
       <Link to={'/'} className='header__logo'>
-        <LogoIcon className='logo-icon' />
-        <h1 className='logo-text font-primary'>Shop</h1>
+        {HeaderVariant({ variant, text })}
       </Link>
       <div className='header__icons'>
         <button onClick={toggleTheme} className='button-icon'>
