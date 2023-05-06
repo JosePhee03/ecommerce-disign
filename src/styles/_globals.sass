@@ -8,6 +8,9 @@ html
   font-weight: 400
   font-style: normal
 
+  @media (min-width: $breakpoints-xl)
+    font-size: 12px
+
   @media (min-width: $breakpoints-2xl)
     font-size: 14px
 
@@ -57,3 +60,34 @@ html[data-theme="dark"]
   &:hover, &:focus
     cursor: pointer
     background: $navy-500-trasparent
+
+.tag
+  background: $navy-500
+  display: flex
+  width: fit-content
+  align-items: center
+  gap: $spacing-xs
+  padding: $spacing-sm $spacing-md
+  border-radius: $spacing-xl + 4
+  color: $light-navy-100
+
+  &__button
+    background: none
+    border: none
+    display: flex
+    justify-content: center
+    align-items: center
+
+    @media (hover: hover)
+      &:hover
+        cursor: pointer
+        filter: opacity(0.5)
+
+    &__icon
+      width: $icon-size-xs
+      height: $icon-size-xs
+      stroke: $light-navy-100
+      stroke-width: 5
+
+.not-decoration
+  text-decoration: none
