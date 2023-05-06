@@ -5,7 +5,7 @@ function Home () {
 
   return (
     <main className='home-layout'>
-      <Header />
+      <Header variant='home' text='Shop' />
       <SearchCont />
       <FilterCont />
       <ProductsCont />
