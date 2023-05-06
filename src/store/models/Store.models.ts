@@ -12,9 +12,8 @@ export enum TypeStoreActions {
 }
 
 export type StoreReducerAdd = (product: ProductType, store: ShoppingCart[]) => ShoppingCart[]
-export type StoreReducerRemove = (product: ProductType, store: ShoppingCart[]) => ShoppingCart[]
+export type StoreReducerRemove = (id: number, store: ShoppingCart[]) => ShoppingCart[]
 
 export type StoreActions =
   | { type: TypeStoreActions.ADD, payload: ProductType }
-  | { type: TypeStoreActions.REMOVE, payload: ProductType }
-
+  | { type: TypeStoreActions.REMOVE, payload: number }

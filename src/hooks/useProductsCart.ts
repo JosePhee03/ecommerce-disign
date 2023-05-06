@@ -7,7 +7,7 @@ function useProductsCart () {
 
   const isProductInCart = (product: ProductType) => store.some(cart => cart.cartProducts.id === product.id)
   const addProduct = (product: ProductType) => dispatch({ type: TypeStoreActions.ADD, payload: product })
-  const removeProduct = (product: ProductType) => dispatch({ type: TypeStoreActions.REMOVE, payload: product })
+  const removeProduct = (id: number) => dispatch({ type: TypeStoreActions.REMOVE, payload: id })
 
   return { store, addProduct, removeProduct, isProductInCart }
 }

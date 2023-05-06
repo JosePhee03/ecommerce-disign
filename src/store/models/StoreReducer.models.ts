@@ -6,14 +6,14 @@ const AddProductToStore: StoreReducerAdd = (product, store) => {
     amount: 1
   }
 
-  const newStore = [...store]
+  const newStore = [ ...store ]
   newStore.push(newProduct)
-  
+
   return newStore
 }
 
-const RemoveProductToStore: StoreReducerRemove = (product, store) => {
-  return store.filter(cart => cart.cartProducts.id !== product.id)
+const RemoveProductToStore: StoreReducerRemove = (id, store) => {
+  return store.filter(cart => cart.cartProducts.id !== id)
 }
 
 export { AddProductToStore, RemoveProductToStore }
