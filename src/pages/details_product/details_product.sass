@@ -1,0 +1,161 @@
+@import '../../styles/_general'
+
+.details-product-layout
+  display: grid
+  grid-template-columns: 1fr
+  grid-template-rows: repeat(2 auto)
+  margin: $spacing-xl
+  grid-row-gap: $spacing-xl
+
+  @media (min-width: $breakpoints-sm)
+    margin: $spacing-xl + 4
+
+  @media (min-width: $breakpoints-md)
+    margin: $spacing-xl + 8
+
+  @media (min-width: $breakpoints-xl)
+    width: 1200px
+    margin: $spacing-xl auto
+
+  @media (min-width: $breakpoints-2xl)
+    width: 1300px
+    margin: $spacing-xl auto
+
+.card-details
+  display: grid
+  max-width: 360px
+  grid-template-rows: repeat(2, auto)
+  margin: auto
+  border-radius: $rounded-md
+  box-shadow: $drop-shadow
+
+  @media (min-width: $breakpoints-md)
+    grid-template-columns: 360px auto
+    padding: $spacing-xl
+    grid-column-gap: $spacing-xl
+    max-width: 100%
+
+  @media (min-width: $breakpoints-lg)
+    grid-template-columns: auto 360px auto
+
+.gallery
+  position: relative
+  height: 100%
+  width: 80px
+  display: none
+
+  @media (min-width: $breakpoints-lg)
+    display: block
+
+  &__cont
+    position: absolute
+    display: flex
+    flex-direction: column
+    gap: $spacing-md
+    width: 100%
+    height: 100%
+    overflow-y: auto
+
+    &__img
+      width: 100%
+      aspect-ratio: 4 / 3
+      border-radius: $rounded-md
+      box-shadow: $drop-shadow
+
+.details
+  display: flex
+  flex-direction: column
+  gap: $spacing-xl
+  padding: $spacing-xl
+  border-radius: 0 0 $rounded-md $rounded-md
+
+  @media (min-width: $breakpoints-md)
+    padding: 0
+    max-width: 300px
+
+  &__image
+    width: 100%
+    aspect-ratio: 4 / 3
+    border-radius: $rounded-md $rounded-md 0 0
+
+    @media (min-width: $breakpoints-md)
+      height: 100%
+      aspect-ratio: 0
+      border-radius: $rounded-md
+      box-shadow: $drop-shadow
+
+  &__header
+    display: grid
+    grid-template-columns: auto fit-content
+    grid-column-gap: 0px
+
+    @media (min-width: $breakpoints-md)
+      gap: $spacing-md
+
+    &__nav
+      grid-area: 1 / 1 / 2 / 3
+      display: none
+
+      @media (min-width: $breakpoints-md)
+        display: flex
+        gap: $spacing-sm
+
+    & div
+      grid-area: 2 / 1 / 3 / 2
+      display: flex
+      flex-direction: column
+      gap: $spacing-sm
+
+    &__brand
+      color: $navy-500
+
+    &__price
+      grid-area: 2 / 2 / 3 / 3
+      justify-self: end
+
+  &__description
+    display: flex
+    flex-direction: column
+    gap: $spacing-md
+
+    & p
+      line-height: 1.2em
+      letter-spacing: 0.02em
+
+  &__rating
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+  &__footer
+    display: flex
+    flex-direction: column
+    gap: $spacing-xl
+    height: fit-content
+
+    &__amount
+      display: flex
+      justify-content: space-between
+      align-items: center
+
+      &__input
+        display: flex
+        gap: $spacing-sm
+        align-items: center
+
+.rating-cont
+  display: flex
+  align-items: center
+  gap: $spacing-sm
+  color: $success
+
+.star
+  width: $icon-size-sm
+  height: $icon-size-sm
+  stroke: $success
+  stroke-width: 2
+  fill: $success
+
+  @media (min-width: $breakpoints-xl)
+    width: $icon-size-sm + 4
+    height: $icon-size-sm + 4
