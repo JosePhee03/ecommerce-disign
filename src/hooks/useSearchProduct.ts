@@ -21,19 +21,21 @@ function useSearchProduct () {
   const [ searchParam, setSearchParam ] = useSearchParams()
   const params = useParams<Pick<SearchProductType, 'category'>>()
 
+  const category = params.category
+  const queryParam = searchParam.get(QueryType.query)
+
   const setQueryParams = (query: string) => {
     if (query === '' || query === null) return setSearchParam()
     setSearchParam({ [QueryType.query]: query })
   }
 
   useEffect(() => {
-    console.log(searchParam.get(QueryType.query))
     setIsLoanding(true)
-    getProducts(params.category, page)
+    getProducts(category, page)
       .then(resProducts => {
         const showNewProducts = SearchProductByQuery({
           products: resProducts,
-          query: searchParam.get(QueryType.query)
+          query: queryParam
         })
         setProducts(showNewProducts)
         setIsLoanding(false)
@@ -45,7 +47,7 @@ function useSearchProduct () {
 
   }, [ params ])
 
-  return { products, setQueryParams, isLoanding, isError, setPage }
+  return { products, setQueryParams, isLoanding, isError, setPage, queryParam, category }
 }
 
 export default useSearchProduct

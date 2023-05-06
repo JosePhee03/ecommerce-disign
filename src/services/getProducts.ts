@@ -1,7 +1,6 @@
-import { ProductType, SearchProductType, apiResponseType } from '@/models'
+import { ProductType, ApiResponseType, SearchProductType, ApiProductResponse } from '@/models'
 
-function fromApiResponseToProducts (apiResponse: apiResponseType): ProductType[] {
-  const { products } = apiResponse
+function AdapterResponseToProducts (...products: ApiProductResponse[]): ProductType[] {
   return products.map(product => {
     return {
       id: product.id,
@@ -10,9 +9,23 @@ function fromApiResponseToProducts (apiResponse: apiResponseType): ProductType[]
       price: product.price,
       brand: product.brand,
       category: product.category,
-      thumbnail: product.thumbnail
+      rating: product.rating,
+      stock: product.stock,
+      images: [ product.thumbnail ].concat(product.images)
     }
   })
+}
+
+function fromApiResponseToProducts (apiResponse: ApiResponseType): ProductType[] {
+  const { products } = apiResponse
+  return AdapterResponseToProducts(...products)
+}
+
+export function getProductFromId (id: number) {
+  const apiURL = `https://dummyjson.com/products/${id}`
+  return fetch(apiURL)
+    .then(res => res.json() as Promise<ApiProductResponse>)
+    .then(data => AdapterResponseToProducts(data)[0])
 }
 
 export function getProducts (category: SearchProductType['category'], page = 0, limit = 30) {
@@ -20,6 +33,6 @@ export function getProducts (category: SearchProductType['category'], page = 0, 
   const searchCategory = category == undefined ? '' : `category/${category}`
   const apiURL = `https://dummyjson.com/products/${searchCategory}?skip=${skip}&limit=${limit}`
   return fetch(apiURL)
-    .then(res => res.json())
+    .then(res => res.json() as Promise<ApiResponseType>)
     .then(fromApiResponseToProducts)
 }

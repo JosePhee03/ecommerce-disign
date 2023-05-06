@@ -1,4 +1,4 @@
-import { category } from './Products.models'
+import { Category } from './Products.models'
 
 export enum QueryType {
   query = 'q',
@@ -6,7 +6,7 @@ export enum QueryType {
 }
 
 export interface ParamsType {
-  [QueryType.category]: category
+  [QueryType.category]: Category
   [QueryType.query]: string
 }
 

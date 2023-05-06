@@ -1,7 +1,7 @@
 import { CATEGORIES } from '@/constant'
 
 const ArrayfromCategories = Object.values(CATEGORIES)
-export type category =  (typeof ArrayfromCategories)[number]
+export type Category =  (typeof ArrayfromCategories)[number]
 
 export interface ProductType {
   id: number,
@@ -9,13 +9,29 @@ export interface ProductType {
   description: string;
   price: number;
   brand: string;
-  category: category;
-  thumbnail: string;
+  rating: number;
+  stock: number;
+  category: Category;
+  images: string[];
 }
 
-export interface apiResponseType {
+export interface ApiResponseType {
   limit: number;
-  products: ProductType[];
+  products: ApiProductResponse[];
   skip: number;
   total: number
+}
+
+export interface ApiProductResponse {
+  id: number;
+  title: string;
+  description: string;
+  price: number;
+  discountPercentage: number;
+  rating: number;
+  stock: number;
+  brand: string;
+  category: Category;
+  thumbnail: string;
+  images: string[];
 }
