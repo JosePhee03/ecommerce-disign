@@ -1,8 +1,9 @@
-import { ChevronDownIcon, CloseIcon, DoneIcon } from '@/components'
-import { CATEGORIES } from '@/constant'
 import { Dispatch, FormEvent, SetStateAction } from 'react'
-import { createPortal } from 'react-dom'
 import { useNavigate } from 'react-router-dom'
+import { createPortal } from 'react-dom'
+
+import { CloseIcon, DoneIcon, Select } from '@/components'
+import { CATEGORIES } from '@/constant'
 
 function FilterModal ({ setShowModal }: {setShowModal: Dispatch<SetStateAction<boolean>>}) {
   const navigate = useNavigate()
@@ -30,16 +31,8 @@ function FilterModal ({ setShowModal }: {setShowModal: Dispatch<SetStateAction<b
             </button>
           </header>
           <div className='select-layout'>
-            <label htmlFor="select-category" className='category-label text-lg'>Categories</label>
-            <div className='select-cont'>
-              <select className='select-cont__input bg-primary font-primary' name="category" id="select-category">
-                {Object.values(CATEGORIES).map(category =>
-                  <option className='select-cont__input__option' key={category}>{category}</option>
-                )
-                }
-              </select>
-              <ChevronDownIcon className='select-cont__icon' />
-            </div>
+            <label htmlFor="select-category" className='text-navy-500 text-lg'>Categories</label>
+            <Select textSize='text-md' selected='Select -- Category' options={Object.values(CATEGORIES)} name='category' id='select-category' />
           </div>
         </form>
       </article>
