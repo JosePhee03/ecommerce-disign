@@ -7,7 +7,7 @@ function ShoppingCart () {
 
   return createPortal(
     <section className="shopping-layout">
-      <Header></Header>
+      <Header text='Shopping Cart'/>
       {
         store.map(cart => (
           <article>
