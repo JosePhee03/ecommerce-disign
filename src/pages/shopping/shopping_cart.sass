@@ -1,9 +1,57 @@
 @import '../../styles/_general'
 
 .shopping-layout
-  width: 400px
-  height: 100vh
-  background: red
-  position: absolute
-  left: 0
-  top: 0
+  display: grid
+  grid-template-columns: 1fr
+  grid-template-rows: repeat(2 auto)
+  margin: $spacing-xl
+  grid-row-gap: $spacing-xl
+
+  @media (min-width: $breakpoints-sm)
+    margin: $spacing-xl + 4
+
+  @media (min-width: $breakpoints-md)
+    margin: $spacing-xl + 8
+
+  @media (min-width: $breakpoints-xl)
+    width: 1200px
+    margin: $spacing-xl auto
+
+  @media (min-width: $breakpoints-2xl)
+    width: 1300px
+    margin: $spacing-xl auto
+
+.store-card
+  display: grid
+  max-width: 360px
+  grid-template-columns: 80px 1fr
+  grid-template-rows: repeat(2, auto)
+  grid-column-gap: $spacing-lg
+  padding: $spacing-lg
+  box-shadow: $drop-shadow
+  border-radius: $rounded-md
+
+  &__img
+    grid-area: 1 / 1 / 3 / 2
+    & img
+      width: 100%
+      aspect-ratio: 1
+
+  &__header
+    grid-area: 1 / 2 / 2 / 3
+    width: 100%
+    display: flex
+    flex-direction: column
+
+  &__footer
+    grid-area: 2 / 2 / 3 / 3
+    display: flex
+    gap: $spacing-md
+    height: fit-content
+    justify-content: space-between
+    align-items: center
+    align-self: end
+
+    &__amount
+      display: flex
+      gap: $spacing-md
