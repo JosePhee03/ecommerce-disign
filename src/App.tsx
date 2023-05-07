@@ -1,7 +1,8 @@
-import { DetailsProduct, Home } from '@/pages'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+
+import { DetailsProduct, Home, ShoppingCart } from '@/pages'
 import { StoreProvider } from '@/store'
 import { FooterDev } from '@/components'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 function App () {
 
@@ -13,6 +14,7 @@ function App () {
             <Route path='/:category' />
           </Route>
           <Route path='/products/:id' element={<DetailsProduct />} ></Route>
+          <Route path='/shopping' element={<ShoppingCart />} ></Route>
         </Routes>
         <FooterDev />
       </StoreProvider>
