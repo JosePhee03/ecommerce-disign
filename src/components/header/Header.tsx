@@ -43,14 +43,16 @@ function Header ({ variant, text }: HeaderProps) {
             : <SunIcon className='icon' />
           }
         </button>
-        <button className='button-icon shopping-cart-icon'>
-          <ShoppingCardIcon className='icon' />
-          {mountProducts !== 0 &&
+        <Link to={'/shopping'}>
+          <button className='button-icon shopping-cart-icon'>
+            <ShoppingCardIcon className='icon' />
+            {mountProducts !== 0 &&
             <span className='shopping-cart-icon__counter text-xs medium'>
               {mountProducts}
             </span>
-          }
-        </button>
+            }
+          </button>
+        </Link>
       </div>
     </header>
   ), [ theme, mountProducts ])
