@@ -1,5 +1,4 @@
-import React, { MutableRefObject, SelectHTMLAttributes, useRef } from 'react'
-import { ChevronDownIcon } from '../icons'
+import { ChevronDownIcon } from '@/components'
 import './select.sass'
 
 interface SelectProps {
@@ -12,11 +11,9 @@ interface SelectProps {
 }
 
 function Select ({ options, name, id, selected, textSize, mini }: SelectProps) {
-  const selectRef = useRef() as MutableRefObject<HTMLSelectElement>
-
   return (
     <div className={`select-cont ${textSize}`}>
-      <select ref={selectRef} className={`select-cont__input text-light-navy-500 bg-primary medium ${mini}`} name={name} id={id}>
+      <select className={`select-cont__input text-light-navy-500 bg-primary medium ${mini}`} name={name} id={id}>
         <option defaultValue={selected}>{selected}</option>
         {options.map(option =>
           <option value={option} key={option}>{option}</option>
