@@ -1,9 +1,8 @@
-import { ShoppingCardIcon } from '@/components'
-import ButtonCart from '@/components/button_cart/ButtonCart'
+import { Link } from 'react-router-dom'
+
+import { ButtonCart } from '@/components'
 import { useProductsCart } from '@/hooks'
 import { ProductType } from '@/models'
-import React from 'react'
-import { Link } from 'react-router-dom'
 
 function ProductCard ({ products }: { products: ProductType[] }) {
   const { isProductInCart, addProduct, removeProduct } = useProductsCart()
@@ -11,8 +10,8 @@ function ProductCard ({ products }: { products: ProductType[] }) {
   return (
     <>
       {products.map(product => (
-        <Link className='not-decoration' to={`/products/${product.id}`}>
-          <article key={product.id} className='product-card bg-primary' title={product.title}>
+        <Link key={product.id} className='not-decoration' to={`/products/${product.id}`}>
+          <article  className='product-card bg-primary' title={product.title}>
             <img src={product.images[0]} alt={product.title} className='product-card__img' />
             <header className='product-card__header'>
               <h6 className='text-sm medium font-primary'>{product.title}</h6>

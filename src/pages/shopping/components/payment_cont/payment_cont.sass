@@ -1,0 +1,39 @@
+@import '../../../../styles/_general'
+
+.payment-cont
+  position: fixed
+  bottom: 0
+  left: 0
+  right: 0
+  padding: $spacing-lg
+  display: grid
+  grid-template-columns: 1fr
+  grid-auto-rows: auto auto
+  gap: $spacing-md
+  place-items: center
+
+  @media (min-width: $breakpoints-md)
+    padding: $spacing-xl 0
+
+  &__total
+    width: 100%
+    display: flex
+    justify-content: space-between
+
+    @media (min-width: $breakpoints-md)
+      width: 500px
+
+  &__button
+    color: $white
+    background: $success
+    width: 100%
+    border: none
+    justify-content: center
+    border-radius: $rounded-sm
+    padding: $spacing-sm $spacing-md
+
+    @media (min-width: $breakpoints-md)
+      width: 500px
+
+    &:hover
+      cursor: pointer

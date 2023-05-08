@@ -17,7 +17,7 @@ function DetailsProduct () {
   useEffect(() => {
     getProductFromId(idProduct).then(product => setProduct(product))
 
-  }, [ params ])
+  }, [])
 
   return (
     <main className='details-product-layout'>
@@ -26,8 +26,8 @@ function DetailsProduct () {
       <section className='card-details bg-primary'>
         <section className='gallery'>
           <div className='gallery__cont'>
-            {product.images.map(img =>
-              <img className='gallery__cont__img' src={img} />
+            {product.images.map((img, index) =>
+              <img key={img + index} className='gallery__cont__img' src={img} />
             )}
           </div>
         </section>

@@ -1,0 +1,67 @@
+@import '../../../../styles/_general'
+
+.shopping-cont
+  display: grid
+  width: 100%
+  grid-template-columns: 1fr
+  gap: $spacing-lg
+  margin: 0 auto 80px auto
+
+  @media (min-width: $breakpoints-md)
+    width: 500px
+
+.store-card
+  display: grid
+  grid-template-columns: auto 1fr
+  grid-template-rows: repeat(2, auto)
+  grid-column-gap: $spacing-lg
+  padding: $spacing-lg
+  box-shadow: $drop-shadow
+  border-radius: $rounded-md
+
+  &__img
+    grid-area: 1 / 1 / 3 / 2
+    & img
+      height: 80px
+      aspect-ratio: 4 / 3
+      border-radius: $rounded-md
+      box-shadow: $drop-shadow
+
+  &__header
+    grid-area: 1 / 2 / 2 / 3
+    width: 100%
+    display: flex
+    flex-direction: column
+
+  &__footer
+    grid-area: 2 / 2 / 3 / 3
+    display: flex
+    gap: $spacing-md
+    width: 100%
+    height: fit-content
+    justify-content: space-between
+    align-items: center
+    align-self: end
+
+    &__amount
+      display: flex
+      gap: $spacing-md
+
+.button-trash
+  background: none
+  display: flex
+  justify-content: center
+  align-items: center
+  border: solid 2px $navy-500
+  border-radius: $rounded-sm
+  padding: $spacing-sm
+  cursor: pointer
+
+  &:hover
+    background: $navy-500-trasparent
+
+  &__icon
+    width: $icon-size-sm
+    height: $icon-size-sm
+    stroke: $navy-500
+    stroke-width: 3
