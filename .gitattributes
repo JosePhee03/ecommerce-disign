@@ -3,3 +3,6 @@ text=lf
  *.scss linguist-vendored eol=lf
  *.js linguist-vendored eol=lf
  *.php eol=lf
+ *.php eol=lf
+ *.png binary
+ *.jpg binary
