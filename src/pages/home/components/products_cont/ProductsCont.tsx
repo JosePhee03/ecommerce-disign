@@ -1,6 +1,6 @@
+import { BanIcon, RotateIcon } from '@/components'
 import { useSearchProduct } from '@/hooks'
 import { ProductCard } from './product_cart'
-import { BanIcon, RotateIcon } from '@/components'
 
 function ProductsCont () {
   const { products, isLoanding, isError } = useSearchProduct()
@@ -12,7 +12,10 @@ function ProductsCont () {
       {!isError && !isLoanding && products.length === 0 && <div className='center'><h1 className='title-text font-primary'>No results found</h1><BanIcon className='icon-error' /><button className='button-error' onClick={() => history.back()}>Back</button></div>}
       {!isError && !isLoanding && products.length !== 0 &&
        <section className='products-cont'>
-         <ProductCard products={products} />
+         {products.map(product => (
+           <ProductCard product={product}/>
+         ))
+         }
        </section>
       }
     </>
