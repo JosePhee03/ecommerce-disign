@@ -50,6 +50,3 @@ describe('Test ButtonCart', () => {
     expect(mockRemoveProduct).toHaveBeenCalledTimes(1)
   })
 })
-
-//color: #E5252C;
-//background: rgba(229, 37, 44, 0.1254901961);
