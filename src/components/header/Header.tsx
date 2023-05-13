@@ -35,25 +35,23 @@ function Header ({ variant, text }: HeaderProps) {
 
   return useMemo(() => (
     <header className='header'>
-      <Link to={'/'} className='header__logo'>
+      <Link title={`Go to ${variant ?? 'back'}`}  to={'/'} className='link header__logo'>
         {HeaderVariant({ variant, text })}
       </Link>
       <div className='header__icons'>
-        <button onClick={toggleTheme} className='button-icon'>
+        <button title='Change theme' type='button' onClick={toggleTheme} className='button-icon'>
           {theme === 'dark'
             ? <MoonIcon className='icon' />
             : <SunIcon className='icon' />
           }
         </button>
-        <Link to={'/shopping'}>
-          <button className='button-icon shopping-cart-icon'>
-            <ShoppingCardIcon className='icon' />
-            {mountProducts !== 0 &&
+        <Link title='Go to shopping' className='link button-icon shopping-cart-icon' to={'/shopping'}>
+          <ShoppingCardIcon className='icon' />
+          {mountProducts !== 0 &&
             <span className='shopping-cart-icon__counter text-xs medium'>
               {mountProducts}
             </span>
-            }
-          </button>
+          }
         </Link>
       </div>
     </header>

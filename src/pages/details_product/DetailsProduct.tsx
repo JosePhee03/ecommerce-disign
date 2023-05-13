@@ -31,15 +31,15 @@ function DetailsProduct () {
             )}
           </div>
         </section>
-        <img className='details__image' src={product.images[0]} alt={product.title} />
+        <img title={`imagen ${product.brand}`} className='details__image' src={product.images[0]} alt={product.title} />
         <article className='details bg-primary'>
           <header className='details__header'>
             <nav className='details__header__nav'>
-              <Link to={'/'} className='not-decoration text-sm text-navy-500'>Home</Link>
+              <Link to={'/'} className='not-decoration link text-sm text-navy-500'>Home</Link>
               <h6 className='text-sm light font-primary'>{'>'}</h6>
-              <Link to={`/${product.category}`} className='not-decoration text-sm text-navy-500'>{product.category}</Link>
+              <Link to={`/${product.category}`} className='not-decoration link text-sm text-navy-500'>{product.category}</Link>
               <h6 className='text-sm light font-primary'>{'>'}</h6>
-              <Link to={`/${product.category}`} className='not-decoration text-sm text-navy-500'>{product.brand}</Link>
+              <Link to={`/${product.category}`} className='not-decoration link text-sm text-navy-500'>{product.brand}</Link>
             </nav>
             <div>
               <h2 className='title-text medium font-primary details__header__title'>{product.title}</h2>
@@ -56,7 +56,7 @@ function DetailsProduct () {
               <StarFillIcon className='star' />
               <h4 className='text-lg'>{product.rating}</h4>
             </div>
-            <Link className='not-decoration' to={`/${product.category}`}>
+            <Link className='not-decoration link' to={`/${product.category}`}>
               <span className='tag text-sm medium'>{product.category}</span>
             </Link>
           </section>

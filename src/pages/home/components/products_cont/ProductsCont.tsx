@@ -2,6 +2,7 @@ import { BanIcon, RotateIcon } from '@/components'
 import { useSearchProduct } from '@/hooks'
 
 import { ProductCard } from './product_cart'
+import './products_cont.sass'
 
 function ProductsCont () {
   const { products, isLoanding, isError } = useSearchProduct()
@@ -20,7 +21,6 @@ function ProductsCont () {
        </section>
       }
     </>
-
   )
 }
 

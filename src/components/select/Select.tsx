@@ -9,12 +9,13 @@ interface SelectProps {
   selected: string
   textSize: string
   mini?: 'select-mini'
+  tabIndex?: number
 }
 
-function Select ({ options, name, id, selected, textSize, mini }: SelectProps) {
+function Select ({ tabIndex = 0, options, name, id, selected, textSize, mini }: SelectProps) {
   return (
     <div className={`select-cont ${textSize}`}>
-      <select title={`select-${name}`} className={`select-cont__input text-light-navy-500 bg-primary medium ${mini}`} name={name} id={id}>
+      <select tabIndex={tabIndex} title={`select ${name}`} className={`select-cont__input text-light-navy-500 bg-primary medium ${mini}`} name={name} id={id}>
         <option defaultValue={selected}>{selected}</option>
         {options.map(option =>
           <option value={option} key={option}>{option}</option>

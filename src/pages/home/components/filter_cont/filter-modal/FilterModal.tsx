@@ -24,11 +24,11 @@ function FilterModal ({ setShowModal }: {setShowModal: Dispatch<SetStateAction<b
       <article className='modal bg-body'>
         <form onSubmit={handleOnSubmit} className='modal__form'>
           <header className='modal__header'>
-            <button type='button' title='button-close' onClick={() => setShowModal(false)} className='modal__header__button close'>
+            <button type='button' title='close' onClick={() => setShowModal(false)} className='modal__header__button close'>
               <CloseIcon className='modal__header__button__icon-close icon' />
             </button>
             <h2 className='title-text medium font-primary'>Filter</h2>
-            <button type='submit' title='button-done' className='modal__header__button done'>
+            <button type='submit' title='done' className='modal__header__button done'>
               <DoneIcon className='modal__header__button__icon-done icon' />
             </button>
           </header>
