@@ -1,5 +1,6 @@
 import { ShoppingCart } from '@/models'
-import { AddProductToStore, RemoveProductToStore, StoreActions, TypeStoreActions } from '@/store/models'
+
+import { AddProductToStore, RemoveProductToStore, StoreActions, TypeStoreActions } from '../models'
 
 function StoreReducer (state: ShoppingCart[], action: StoreActions): ShoppingCart[] {
   switch (action.type) {

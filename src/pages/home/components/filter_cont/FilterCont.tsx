@@ -1,9 +1,11 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 import { CloseIcon, FilterIcon } from '@/components'
-import { FilterModal } from './filter-modal'
 import { useSearchProduct } from '@/hooks'
-import { Link } from 'react-router-dom'
+
+import { FilterModal } from './filter-modal'
+import './filter_cont.sass'
 
 function FilterCont () {
   const [ showModal, setShowModal ] = useState<boolean>(false)

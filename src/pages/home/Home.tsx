@@ -1,5 +1,8 @@
-import { FilterCont, ProductsCont, SearchCont } from './components'
 import { Header } from '@/components'
+
+import { FilterCont, ProductsCont, SearchCont } from './components'
+
+import './home.sass'
 
 function Home () {
 

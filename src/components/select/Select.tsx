@@ -1,4 +1,5 @@
 import { ChevronDownIcon } from '@/components'
+
 import './select.sass'
 
 interface SelectProps {
@@ -13,7 +14,7 @@ interface SelectProps {
 function Select ({ options, name, id, selected, textSize, mini }: SelectProps) {
   return (
     <div className={`select-cont ${textSize}`}>
-      <select className={`select-cont__input text-light-navy-500 bg-primary medium ${mini}`} name={name} id={id}>
+      <select title={`select-${name}`} className={`select-cont__input text-light-navy-500 bg-primary medium ${mini}`} name={name} id={id}>
         <option defaultValue={selected}>{selected}</option>
         {options.map(option =>
           <option value={option} key={option}>{option}</option>

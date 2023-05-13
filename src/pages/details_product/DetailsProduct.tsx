@@ -1,11 +1,11 @@
+import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
-import { Header, Select, StarFillIcon } from '@/components'
 import { getProductFromId } from '@/services'
-import { useEffect, useState } from 'react'
 import { ProductType } from '@/models'
-import ButtonCart from '@/components/button_cart/ButtonCart'
 import { useProductsCart } from '@/hooks'
+
+import { Header, Select, StarFillIcon, ButtonCart } from '@/components'
 
 function DetailsProduct () {
   const [ product, setProduct  ] = useState<ProductType>()
@@ -27,7 +27,7 @@ function DetailsProduct () {
         <section className='gallery'>
           <div className='gallery__cont'>
             {product.images.map((img, index) =>
-              <img key={img + index} className='gallery__cont__img' src={img} />
+              <img title={product.brand} key={img + index} className='gallery__cont__img' src={img} />
             )}
           </div>
         </section>

@@ -1,5 +1,6 @@
 import { createContext } from 'react'
-import { StoreContextInterface } from '@/store/models/'
+
+import { StoreContextInterface } from '../models'
 
 const StoreContext = createContext<StoreContextInterface | null>(null)
 

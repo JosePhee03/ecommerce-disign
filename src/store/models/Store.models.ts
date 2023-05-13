@@ -1,5 +1,6 @@
-import { ProductType, ShoppingCart } from '@/models'
 import { Dispatch } from 'react'
+
+import { ProductType, ShoppingCart } from '@/models'
 
 export interface StoreContextInterface {
   store: ShoppingCart[]

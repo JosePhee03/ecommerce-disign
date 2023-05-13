@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 
 import { Select, TrashIcon } from '@/components'
 import { ShoppingCart } from '@/models'
+
 import './shopping_cont.sass'
 
 interface ShoppingContProps {
@@ -36,7 +37,7 @@ function ShoppingCont ({ store, removeProduct }: ShoppingContProps) {
                   textSize='text-sm'
                   mini='select-mini'
                 />
-                <button onClick={() => removeProduct(cart.cartProducts.id)} className='button-trash'>
+                <button title='button remove product' type='button' onClick={() => removeProduct(cart.cartProducts.id)} className='button-trash'>
                   <TrashIcon className='button-trash__icon' />
                 </button>
               </section>

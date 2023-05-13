@@ -1,7 +1,9 @@
-import { ArrowLeftIcon, LogoIcon, MoonIcon, ShoppingCardIcon, SunIcon } from '@/components/icons'
-import { useDarkMode, useProductsCart } from '@/hooks'
 import { useMemo } from 'react'
 import { Link } from 'react-router-dom'
+
+import { useDarkMode, useProductsCart } from '@/hooks'
+
+import { ArrowLeftIcon, LogoIcon, MoonIcon, ShoppingCardIcon, SunIcon } from '@/components'
 
 interface HeaderProps {
   variant?: 'home'
