@@ -1,8 +1,9 @@
-text=lf
- *.css linguist-vendored eol=lf
- *.scss linguist-vendored eol=lf
- *.js linguist-vendored eol=lf
- *.php eol=lf
- *.php eol=lf
- *.png binary
- *.jpg binary
+* text=auto
+*.js text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.css text eol=lf
+*.sass text eol=lf
+
+*.png binary
+*.jpg binary
