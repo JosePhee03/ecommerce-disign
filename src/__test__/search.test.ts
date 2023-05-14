@@ -21,7 +21,7 @@ test.describe('Test search', async () => {
 
   test('should find a sigle product', async ({ page }) => {
     await page.goto(`http://localhost:5173/${SINGLE_PRODUCT_URL}`)
-    const product = await page.getByRole('article', { name: SINGLE_PRODUCT })
+    const product = await page.getByRole('link', { name: SINGLE_PRODUCT })
     await expect(product).toBeDefined()
 
     await expect(product).toHaveCount(1)
