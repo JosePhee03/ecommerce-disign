@@ -5,12 +5,12 @@ import { PaymentCont, ShoppingCont } from './components'
 import './shopping_cart.sass'
 
 function ShoppingCart () {
-  const { store, removeProduct } = useProductsCart()
+  const {  cart, removeProduct } = useProductsCart()
 
   return (
     <main className="shopping-layout">
       <Header text='Shopping Cart'/>
-      <ShoppingCont store={store} removeProduct={removeProduct} />
+      <ShoppingCont cart={cart} removeProduct={removeProduct} />
       <PaymentCont />
     </main>
   )

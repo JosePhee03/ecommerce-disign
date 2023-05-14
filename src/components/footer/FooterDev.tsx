@@ -3,14 +3,14 @@ import { useProductsCart } from '@/hooks'
 import './footer_dev.sass'
 
 function FooterDev () {
-  const { store } = useProductsCart()
+  const { cart } = useProductsCart()
 
   return (
     <footer className='footer-dev'>
-      {store.map(cart => (
-        <article key={cart.cartProducts.id}>
-          <h3>{cart.cartProducts.id}</h3>
-          <h4>{cart.cartProducts.title}</h4>
+      {cart.map(({ cartProduct }) => (
+        <article key={cartProduct.id}>
+          <h3>{cartProduct.id}</h3>
+          <h4>{cartProduct.title}</h4>
         </article>
       ))}
     </footer>

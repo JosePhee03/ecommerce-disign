@@ -18,7 +18,7 @@ function ButtonCart ({ tabIndex = 0, isProductInCart, removeProduct, product, ad
       {isProductInCart
         ? <button tabIndex={tabIndex} type='button' title='Remove product to cart' onClick={(event) => {
           event.preventDefault()
-          removeProduct(product.id)
+          return removeProduct(product.id)
         }}
         className={'button-in-cart ' + fontSize}>
           <h6 >
@@ -28,7 +28,7 @@ function ButtonCart ({ tabIndex = 0, isProductInCart, removeProduct, product, ad
         </button>
         : <button tabIndex={tabIndex} type='button' title='Add product to cart' onClick={(event) => {
           event.preventDefault()
-          addProduct(product)
+          return addProduct(product)
         }} className={'button-normal ' + fontSize}>
           <h6 >
             add to

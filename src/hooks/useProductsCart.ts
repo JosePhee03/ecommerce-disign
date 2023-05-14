@@ -1,16 +1,17 @@
-import { useContext } from 'react'
-
 import { ProductType } from '@/models'
-import { StoreContext, StoreContextInterface, TypeStoreActions } from '@/store'
+import { useAppDispatch, useAppSelector } from '@/store'
+
+import { ADD_PRODUCT, REMOVE_PRODUCT } from '@/store/redux/slices/cartSlice'
 
 function useProductsCart () {
-  const { store, dispatch } = useContext(StoreContext) as StoreContextInterface
+  const cart = useAppSelector(state => state.cart)
+  const dispatch = useAppDispatch()
 
-  const isProductInCart = (product: ProductType) => store.some(cart => cart.cartProducts.id === product.id)
-  const addProduct = (product: ProductType) => dispatch({ type: TypeStoreActions.ADD, payload: product })
-  const removeProduct = (id: number) => dispatch({ type: TypeStoreActions.REMOVE, payload: id })
+  const isProductInCart = (product: ProductType) => cart.some(cart => cart.cartProduct.id === product.id)
+  const addProduct = (product: ProductType) => dispatch(ADD_PRODUCT(product))
+  const removeProduct = (id: number) => dispatch(REMOVE_PRODUCT(id))
 
-  return { store, addProduct, removeProduct, isProductInCart }
+  return { cart, addProduct, removeProduct, isProductInCart }
 }
 
 export default useProductsCart

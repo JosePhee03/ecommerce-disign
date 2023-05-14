@@ -15,7 +15,7 @@ function ProductsCont () {
       {!isError && !isLoanding && products.length !== 0 &&
        <section className='products-cont'>
          {products.map(product => (
-           <ProductCard product={product}/>
+           <ProductCard key={product.id} product={product}/>
          ))
          }
        </section>

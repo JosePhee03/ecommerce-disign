@@ -11,10 +11,10 @@ interface HeaderProps {
 }
 
 function Header ({ variant, text }: HeaderProps) {
-  const { store } = useProductsCart()
+  const { cart } = useProductsCart()
   const { theme, toggleTheme } = useDarkMode()
 
-  const mountProducts = store.length
+  const mountProducts = cart.length
 
   const HeaderVariant = ({ variant, text }: HeaderProps): JSX.Element => {
     switch (variant) {

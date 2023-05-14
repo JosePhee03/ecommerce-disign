@@ -1,6 +1,6 @@
 import { ProductType } from './Products.models'
 
 export interface ShoppingCart {
-  cartProducts: ProductType,
+  cartProduct: ProductType,
   amount: number
 }

@@ -1,8 +1,8 @@
 import { ShoppingCart } from '@/models'
 
-export const STORE_MOCK: ShoppingCart[] = [
+export const CART_MOCK: ShoppingCart[] = [
   {
-    'cartProducts': {
+    'cartProduct': {
       'id': 4,
       'title': 'OPPOF19',
       'description': 'OPPO F19 is officially announced on April 2021.',
@@ -23,7 +23,7 @@ export const STORE_MOCK: ShoppingCart[] = [
     'amount': 6
   },
   {
-    'cartProducts': {
+    'cartProduct': {
       'id': 3,
       'title': 'Samsung Universe 9',
       'description': 'Samsung\'s new variant which goes beyond Galaxy to the Universe',
@@ -40,7 +40,7 @@ export const STORE_MOCK: ShoppingCart[] = [
     'amount': 8
   },
   {
-    'cartProducts': {
+    'cartProduct': {
       'id': 2,
       'title': 'iPhone X',
       'description': 'SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...',
