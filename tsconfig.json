@@ -32,7 +32,7 @@
   },
   "include": [
     "src"
-  ],
+, "setup.ts"  ],
   "references": [
     {
       "path": "./tsconfig.node.json"

@@ -1,6 +1,6 @@
 import { test, expect, describe } from 'vitest'
 
-import { PRODUCT_MOCK as product, STORE_MOCK as originStore } from '@/mocks'
+import { PRODUCT_MOCK as product, CART_MOCK as originStore } from '@/mocks'
 
 import { AddProductToStore, RemoveProductToStore } from './StoreReducer.models'
 
