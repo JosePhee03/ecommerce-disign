@@ -1,7 +1,7 @@
 {
   "name": "ecommerce-disign",
   "private": true,
-  "version": "1.2.2",
+  "version": "2.2.2",
   "type": "module",
   "scripts": {
     "dev": "vite",
