@@ -1,7 +1,7 @@
 import { ProductType } from '@/models'
 import { useAppDispatch, useAppSelector } from '@/store'
 
-import { ADD_PRODUCT, REMOVE_PRODUCT } from '@/store/redux/slices/cartSlice'
+import { ADD_PRODUCT, REMOVE_PRODUCT } from '@/store/slices/cartSlice'
 
 function useProductsCart () {
   const cart = useAppSelector(state => state.cart)
