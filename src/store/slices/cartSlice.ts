@@ -3,7 +3,10 @@ import { AddProductToStore, RemoveProductToStore } from '@/store/models'
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
-const initialState: ShoppingCart[] = []
+const initialState: ShoppingCart[] = (() => {
+  const localStoraState = window.localStorage.getItem('__redux_state__')
+  return localStoraState !== null ? JSON.parse(localStoraState) : []
+})()
 
 export const counterSlice = createSlice({
   name: 'cart',
