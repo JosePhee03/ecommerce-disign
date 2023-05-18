@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { CloseIcon, FilterIcon } from '@/components'
 import { useSearchProduct } from '@/hooks'
 
-import { FilterModal } from './filter-modal'
+import { FilterModal } from '../filter-modal'
 import './filter_cont.sass'
 
 function FilterCont () {
@@ -15,7 +15,7 @@ function FilterCont () {
     <section className='filter-cont'>
       <h2 className='text-3xl medium font-primary'>Products</h2>
       <div className='modal-cont'>
-        <button onClick={() => setShowModal(true) } className='filter-cont__button'>
+        <button onClick={() => setShowModal(true)} className='filter-cont__button'>
           <h6 className='text-sm'>Filters</h6>
           <FilterIcon className='filter-cont__button__icon' />
         </button>

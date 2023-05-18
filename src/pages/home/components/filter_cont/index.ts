@@ -1,2 +1,2 @@
 export { default as FilterCont } from './FilterCont'
-export * from './filter-modal'
+export * from '../filter-modal'

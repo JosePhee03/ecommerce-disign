@@ -1,4 +1,5 @@
-export * from './filter_cont/filter-modal'
+export * from './filter-modal'
 export * from './filter_cont'
+export * from './product_cart'
 export * from './products_cont'
 export * from './search_cont'
