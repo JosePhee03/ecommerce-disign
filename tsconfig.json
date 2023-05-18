@@ -31,8 +31,9 @@
     }
   },
   "include": [
-    "src"
-, "setup.ts"  ],
+    "src",
+    "setup.ts"
+  ],
   "references": [
     {
       "path": "./tsconfig.node.json"
