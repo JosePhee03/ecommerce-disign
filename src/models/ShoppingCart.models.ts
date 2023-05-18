@@ -1,6 +1,6 @@
-import { ProductType } from './Products.models'
+import { Product } from './Products.models'
 
-export interface ShoppingCart {
-  cartProduct: ProductType,
+export interface Cart {
+  cartProduct: Product,
   amount: number
 }

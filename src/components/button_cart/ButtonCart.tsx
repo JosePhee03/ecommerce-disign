@@ -1,4 +1,4 @@
-import { ProductType } from '@/models'
+import { Product } from '@/models'
 import { ShoppingCardIcon } from '@/components'
 
 import './button_cart.sass'
@@ -6,8 +6,8 @@ import './button_cart.sass'
 interface ButtonCartProps {
   isProductInCart: boolean
   removeProduct: (id: number) => void
-  addProduct: (product: ProductType) => void
-  product: ProductType
+  addProduct: (product: Product) => void
+  product: Product
   fontSize: string
   tabIndex?: number
 }

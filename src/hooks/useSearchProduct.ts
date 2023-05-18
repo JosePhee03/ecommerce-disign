@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
 import { useParams, useSearchParams } from 'react-router-dom'
 
-import { ProductType, QueryType, SearchProductType } from '@/models'
+import { Product, Query, SearchProduct } from '@/models'
 import { getProducts } from '@/services'
 
-const SearchProductByQuery = ({ products, query }:{products: ProductType[], query: SearchProductType['query']}) => {
+const SearchProductByQuery = ({ products, query }:{products: Product[], query: SearchProduct['query']}) => {
   if (query === null) return products
   const newProducts = [ ...products ]
   const lowerCaseQuery = query.toLowerCase()
@@ -13,20 +13,20 @@ const SearchProductByQuery = ({ products, query }:{products: ProductType[], quer
 }
 
 function useSearchProduct () {
-  const [ products, setProducts ] = useState<ProductType[]>([])
+  const [ products, setProducts ] = useState<Product[]>([])
   const [ isLoanding, setIsLoanding ] = useState<boolean>(true)
   const [ isError, setIsError ] = useState<boolean>(false)
   const [ page, setPage ] = useState<number>(0)
 
   const [ searchParam, setSearchParam ] = useSearchParams()
-  const params = useParams<Pick<SearchProductType, 'category'>>()
+  const params = useParams<Pick<SearchProduct, 'category'>>()
 
   const category = params.category
-  const queryParam = searchParam.get(QueryType.query)
+  const queryParam = searchParam.get(Query.query)
 
   const setQueryParams = (query: string) => {
     if (query === '' || query === null) return setSearchParam()
-    setSearchParam({ [QueryType.query]: query })
+    setSearchParam({ [Query.query]: query })
   }
 
   useEffect(() => {

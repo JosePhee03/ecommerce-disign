@@ -1,6 +1,6 @@
-import { ShoppingCart } from '@/models'
+import { Cart } from '@/models'
 
-export const CART_MOCK: ShoppingCart[] = [
+export const CART_MOCK: Cart[] = [
   {
     'cartProduct': {
       'id': 4,

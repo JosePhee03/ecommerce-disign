@@ -1,6 +1,6 @@
-import { ProductType } from '@/models'
+import { Product } from '@/models'
 
-export const PRODUCT_MOCK: ProductType = {
+export const PRODUCT_MOCK: Product = {
   id: 1,
   title: 'iPhone 9',
   description: 'An apple mobile which is nothing like apple',

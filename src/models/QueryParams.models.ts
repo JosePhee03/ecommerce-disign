@@ -1,16 +1,16 @@
 import { Category } from './Products.models'
 
-export enum QueryType {
+export enum Query {
   query = 'q',
   category = 'category'
 }
 
-export interface ParamsType {
-  [QueryType.category]: Category
-  [QueryType.query]: string
+export interface Params {
+  [Query.category]: Category
+  [Query.query]: string
 }
 
-export interface SearchProductType  {
-  category: ParamsType[QueryType.category] | undefined
-  query: ParamsType[QueryType.query] | null
+export interface SearchProduct  {
+  category: Params[Query.category] | undefined
+  query: Params[Query.query] | null
 }

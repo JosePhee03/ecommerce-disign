@@ -1,9 +1,9 @@
-import { ProductType, ShoppingCart } from '@/models'
+import { Product, Cart } from '@/models'
 import { AddProductToStore, RemoveProductToStore } from '@/store/models'
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
-const initialState: ShoppingCart[] = (() => {
+const initialState: Cart[] = (() => {
   const localStoraState = window.localStorage.getItem('__redux_state__')
   return localStoraState !== null ? JSON.parse(localStoraState) : []
 })()
@@ -12,7 +12,7 @@ export const counterSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    ADD_PRODUCT: (state, action: PayloadAction<ProductType>) => {
+    ADD_PRODUCT: (state, action: PayloadAction<Product>) => {
       return AddProductToStore(action.payload, state)
     },
     REMOVE_PRODUCT: (state, action: PayloadAction<number>) => {

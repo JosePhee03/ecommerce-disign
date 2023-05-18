@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
 import { getProductFromId } from '@/services'
-import { ProductType } from '@/models'
+import { Product } from '@/models'
 import { useProductsCart } from '@/hooks'
 
 import { Header, Select, StarFillIcon, ButtonCart } from '@/components'
 
 function DetailsProduct () {
-  const [ product, setProduct  ] = useState<ProductType>()
+  const [ product, setProduct  ] = useState<Product>()
   const { isProductInCart, removeProduct, addProduct } = useProductsCart()
   const params = useParams()
   const { id } = params

@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom'
 
 import { Select, TrashIcon } from '@/components'
-import { ShoppingCart } from '@/models'
+import { Cart } from '@/models'
 
 import './shopping_cont.sass'
 
 interface ShoppingContProps {
-  cart: ShoppingCart[]
+  cart: Cart[]
   removeProduct: (id: number) => void
 }
 

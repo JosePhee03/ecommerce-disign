@@ -1,6 +1,6 @@
-import { StoreReducerAdd, StoreReducerRemove } from './Store.models'
+import { CartReducerAdd, CartReducerRemove } from './Store.models'
 
-const AddProductToStore: StoreReducerAdd = (product, store) => {
+const AddProductToStore: CartReducerAdd = (product, store) => {
   const newProduct = {
     cartProduct: product,
     amount: 1
@@ -12,7 +12,7 @@ const AddProductToStore: StoreReducerAdd = (product, store) => {
   return newStore
 }
 
-const RemoveProductToStore: StoreReducerRemove = (id, store) => {
+const RemoveProductToStore: CartReducerRemove = (id, store) => {
   return store.filter(cart => cart.cartProduct.id !== id)
 }
 

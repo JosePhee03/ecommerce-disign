@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom'
 
 import { ButtonCart } from '@/components'
-import { ProductType } from '@/models'
+import { Product } from '@/models'
 import { useProductsCart } from '@/hooks'
 
 import './product_card.sass'
 
 interface PorductCartProps {
-  product: ProductType,
+  product: Product,
 }
 
 function ProductCard ({ product }: PorductCartProps) {
