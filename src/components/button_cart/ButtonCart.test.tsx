@@ -3,6 +3,7 @@ import { describe, it, expect } from 'vitest'
 import { fireEvent, render, screen } from '@testing-library/react'
 
 import { PRODUCT_MOCK } from '@/mocks'
+
 import ButtonCart from './ButtonCart'
 
 describe('Test ButtonCart', () => {

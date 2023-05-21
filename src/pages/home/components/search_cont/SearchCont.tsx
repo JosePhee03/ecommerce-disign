@@ -1,12 +1,12 @@
 import { FormEvent, useMemo } from 'react'
 
 import { SearchIcon } from '@/components'
-import { useSearchProduct } from '@/hooks'
+import { useReactQuery } from '@/hooks'
 
 import './search_cont.sass'
 
 function SearchCont () {
-  const { products, setQueryParams } = useSearchProduct()
+  const { products, setQueryParams } = useReactQuery()
 
   const handleOnSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()

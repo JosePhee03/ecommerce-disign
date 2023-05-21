@@ -1,6 +1,5 @@
 import { Product } from '@/models'
 import { useAppDispatch, useAppSelector } from '@/store'
-
 import { ADD_PRODUCT, REMOVE_PRODUCT } from '@/store/slices/cartSlice'
 
 function useProductsCart () {

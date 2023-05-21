@@ -1,5 +1,5 @@
-import { Product } from '@/models'
 import { ShoppingCardIcon } from '@/components'
+import { Product } from '@/models'
 
 import './button_cart.sass'
 

@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 
 import { ButtonCart } from '@/components'
-import { Product } from '@/models'
 import { useProductsCart } from '@/hooks'
+import { Product } from '@/models'
 
 import './product_card.sass'
 

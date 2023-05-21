@@ -1,6 +1,6 @@
 import { Dispatch, FormEvent, SetStateAction } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { createPortal } from 'react-dom'
+import { useNavigate } from 'react-router-dom'
 
 import { CloseIcon, DoneIcon, Select } from '@/components'
 import { CATEGORIES } from '@/constant'
@@ -13,7 +13,7 @@ function FilterModal ({ setShowModal }: {setShowModal: Dispatch<SetStateAction<b
   const handleOnSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     const formData = new FormData(event.target as HTMLFormElement)
-    const { category } = Object.fromEntries(formData)
+    const category = formData.get('category') as string
     navigate(`/${category}`)
     setShowModal(false)
   }

@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
-import { getProductFromId } from '@/services'
-import { Product } from '@/models'
-import { useProductsCart } from '@/hooks'
-
 import { Header, Select, StarFillIcon, ButtonCart } from '@/components'
+import { useProductsCart } from '@/hooks'
+import { Product } from '@/models'
+import { getProductFromId } from '@/services'
 
 function DetailsProduct () {
   const [ product, setProduct  ] = useState<Product>()
