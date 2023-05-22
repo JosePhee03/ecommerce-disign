@@ -29,13 +29,9 @@
         "groups": [
           "module",
           "/^@[a-z]/",
-          "/^@\/[a-z]/"
-          //[
-          //  "parent",
-          //  "sibling",
-          //  "index"
-          //],
-          //"/\\.$/"
+          "/^@\/[a-z]/",
+          "/\\.sass/",
+          "/index/"
         ],
         "alphabetize": {
           "order": "asc",
