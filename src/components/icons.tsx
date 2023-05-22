@@ -2,6 +2,10 @@ interface SvgProps {
   className: string
 }
 
+export interface StarProps extends SvgProps {
+  type: 'fill' | 'mid' | 'emply'
+}
+
 export function LogoIcon ({ className }: SvgProps) {
   return (
     <svg
@@ -218,44 +222,38 @@ export function ArrowLeftIcon ({ className }: SvgProps) {
   )
 }
 
-export function StarFillIcon ({ className }: SvgProps) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      className={className}
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
-      ></path>
-    </svg>
-  )
-}
+export function StarIcon ({ className, type }: StarProps) {
 
-export function StartMidIcon ({ className }: SvgProps) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      className={className}
-    >
-      <path
-        d="M5.82 21.02L12 17.77V2L8.91 8.26 2 9.27l5 4.87-1.18 6.88z"
-      ></path>
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77M12 2L8.91 8.26 2 9.27l5 4.87-1.18 6.88L12 17.77M12 2v15.77"
-      ></path>
-    </svg>
-  )
-}
+  const pathFill = <path
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    fill="currentColor"
+    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+  ></path>
 
-export function StartIcon ({ className }: SvgProps) {
+  const pathMid = <>
+    <path d="M5.82 21.02L12 17.77V2L8.91 8.26 2 9.27l5 4.87-1.18 6.88z" fill="currentColor" />
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      stroke="currentColor"
+      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77M12 2L8.91 8.26 2 9.27l5 4.87-1.18 6.88L12 17.77M12 2v15.77"
+    />
+  </>
+
+  const pathEmply = <path
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    fill="none"
+    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+  />
+
+  const Path = ({ type }: Pick<StarProps, 'type'>) => {
+    if (type === 'fill') return pathFill
+    else if (type === 'mid') return pathMid
+    else return pathEmply
+  }
+
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -263,11 +261,7 @@ export function StartIcon ({ className }: SvgProps) {
       fill="none"
       viewBox="0 0 24 24"
     >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
-      ></path>
+      <Path type={type} />
     </svg>
   )
 }
