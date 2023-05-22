@@ -1,10 +1,9 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-
 import { Provider } from 'react-redux'
+import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom'
 
-import { store } from '@/store'
-import { DetailsProduct, Home, ShoppingCart } from '@/pages'
 import { FooterDev } from '@/components'
+import { DetailsProduct, Home, ShoppingCart } from '@/pages'
+import { store } from '@/store'
 
 function App () {
 
@@ -13,7 +12,7 @@ function App () {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home />}>
-            <Route path='/:category' />
+            <Route path='/:category' element={<Outlet />}/>
           </Route>
           <Route path='/products/:id' element={<DetailsProduct />} ></Route>
           <Route path='/shopping' element={<ShoppingCart />} ></Route>

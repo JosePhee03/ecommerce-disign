@@ -2,14 +2,15 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import { CloseIcon, FilterIcon } from '@/components'
-import { useSearchProduct } from '@/hooks'
+import { useReactQuery } from '@/hooks'
 
 import { FilterModal } from '../filter-modal'
+
 import './filter_cont.sass'
 
 function FilterCont () {
   const [ showModal, setShowModal ] = useState<boolean>(false)
-  const { queryParam, category } = useSearchProduct()
+  const { search, category } = useReactQuery()
 
   return (
     <section className='filter-cont'>
@@ -22,9 +23,9 @@ function FilterCont () {
         {showModal && <FilterModal setShowModal={setShowModal} />}
       </div>
       <div className='filter-cont__description'>
-        {queryParam &&
+        {search !== '' &&
           <div className='filter-cont__filter'>
-            <h1 className='font-primary text-lg'>Search results for "{queryParam}"</h1>
+            <h1 className='font-primary text-lg'>Search results for "{search}"</h1>
           </div>
         }
         {category &&

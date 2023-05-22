@@ -1,16 +1,17 @@
 import { Category } from './Products.models'
 
 export enum Query {
-  query = 'q',
-  category = 'category'
+  search = 'search',
+  category = 'category',
+  page = 'page'
 }
 
-export interface Params {
-  [Query.category]: Category
-  [Query.query]: string
+export interface SearchParams {
+  [Query.search]?: string
+  [Query.page]?: number
 }
 
 export interface SearchProduct  {
-  category: Params[Query.category] | undefined
-  query: Params[Query.query] | null
+  category: Category | undefined
+  query: string | null
 }

@@ -1,0 +1,26 @@
+@import '../../../../styles/_general'
+
+.pagination
+  width: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+  gap: $spacing-md
+
+  &__button-arrow , &__button-pag
+    background: $navy-500-trasparent
+    border: $border-light-navy-200
+    border-radius: $rounded-sm
+    padding: $spacing-sm $spacing-md
+  
+    &:hover:enabled
+      cursor: pointer
+      background: $navy-500
+      color: $white 
+
+  &__button-arrow:disabled
+    opacity: (0.3)
+
+  &__button-pag:disabled
+    background: $navy-500
+    color: $white 
