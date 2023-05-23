@@ -8,7 +8,7 @@ import { getProducts, getSearchProducts } from '@/services'
 
 function useReactQuery () {
   const [ searchParam, setSearchParam ] = useSearchParams()
-  const [ products, setProducts ] = useState<Product[]>([])
+  const [ products, setProducts ] = useState<Product[] | undefined>(undefined)
   const [ total, setTotal ] = useState<number>(0)
   const params = useParams()
 
@@ -34,12 +34,13 @@ function useReactQuery () {
   })
 
   useEffect(() => {
-    const searchFromCategory = (products: Product[], search: string, category?: string) => {
+    const searchFromCategory = (products: Product[] | undefined, search: string, category?: string) => {
       if (search === '' || category == undefined) return products
+      if (products == undefined) return undefined
       return products.filter(product => product.title.toLowerCase().includes(search.toLowerCase()))
     }
 
-    const newPorducts = searchFromCategory(data?.products ?? [], search, category)
+    const newPorducts = searchFromCategory(data?.products, search, category)
 
     setTotal(data?.total ?? 0)
     setProducts(newPorducts)
