@@ -20,7 +20,7 @@ function ProductCard ({ product }: PorductCartProps) {
     <Link key={product.id} title={product.title} className='not-decoration link' to={`/products/${product.id}`}>
       <article className='product-card bg-primary'>
         <Suspense fallback={<h1>CARGANDO...</h1>}>
-          <Image src={product.images[0]} loading='lazy' width="140" height="140" alt={product.title} className='product-card__img' />
+          <Image src={product.images[0]} loading='lazy' alt={product.title} className='product-card__img' />
         </Suspense>
         <header className='product-card__header'>
           <h6 className='text-sm medium font-primary'>{product.title}</h6>

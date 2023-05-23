@@ -23,7 +23,7 @@ function SearchCont () {
   return useMemo(() => (
     <section className='search-cont'>
       <form className='search-cont__form' onSubmit={event => handleOnSubmit(event)}>
-        <input type="text" name={Query.search} className='search-cont__form__input bg-primary font-primary' placeholder='Smartphone, Laptop...' />
+        <input type="text" name={Query.search} className='search-cont__form__input text-xl bg-primary font-primary' placeholder='Smartphone, Laptop...' />
         <button type='submit' title='Search button' className='search-cont__form__button bg-primary'>
           <SearchIcon className='icon search-cont__form__button__icon' />
         </button>
